@@ -308,7 +308,7 @@
                                                                 <?echo $msguserfrom['username'];?> <!--发送信息者名字-->
                                                             </div>
                                                             <div class="time hidden-xs">
-                                                                <?echo $row->data;?>
+                                                                <?echo $row->date;?>
                                                             </div>
                                                             <div class="text">
                                                                 <?echo $row->content;?> <!--信息内容-->
@@ -321,16 +321,7 @@
                                             ?>
                                             </div>
                                         </div>
-                                        <div class="conversation-new-message">
-                                            <form>
-                                                <div class="form-group">
-                                                    <textarea class="form-control" rows="2" placeholder="Enter your message..."></textarea>
-                                                </div>
-                                                <div class="clearfix">
-                                                    <button type="submit" class="btn btn-success pull-right">Send message</button>
-                                                </div>
-                                            </form>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

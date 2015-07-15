@@ -55,12 +55,20 @@ class Login extends CI_Controller
                 //将用户数据写入session
                 $this->session->set_userdata($userinfo);
 
-                $data = array(
+                $logindate = array(
                     'status' => "1",
                     'lastLoginTime' => date("Y-m-d H:i:s")
                 );
                 //更新用户登陆时间
-                $this->db->from('user')->where('student_id' , $id)->update('user', $data);
+                $this->db->from('user')->where('student_id' , $id)->update('user', $logindate);
+                //记录事件
+                $log = array(
+                    'student_id' => $userinfo['student_id'],
+                    'username'   => $userinfo['username'],
+                    'events'   => '登陆',
+                    'time' => date("Y-m-d H:i:s")
+                );
+                $this->db->insert('log', $log);
 
 /*                print_r($userinfo);//用户数据调出 调试用
                 echo "<hr>";

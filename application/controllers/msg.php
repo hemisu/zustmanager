@@ -13,10 +13,21 @@ class Msg extends CI_Controller
         parent::__construct();
     }
 
-    public function send($toid = null ,$fromid = null ,$text = null)
+    public function send()
     {
+        $toid = $this->input->post('toid');//获取POST数据
+        $fromid = $this->input->post('fromid');
+        $text = $this->input->post('text');
+        $current_url = $this->input->post('current_url');//获取来源地址
+
         $this->load->model('User_data'); //Load user data model
-        $this->User_data->sent_message( $toid = null ,$fromid = null ,$text = null);
+        if($this->User_data->sent_message($toid,$fromid,$text)){
+            header("refresh:2;url=$current_url");
+            $this->load->view('part/success');
+        }else{
+            echo "发送失败";
+        }
+
     }
 
 

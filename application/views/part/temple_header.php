@@ -7,11 +7,11 @@
  */
 $this->load->model('User_data'); //加载User_data模块
 
-$head_id = $this->session->userdata('student_id');
+$head_id = $this->session->userdata('student_id');//从session处获得登陆者信息
 if($this->User_data->is_login() == False){
     redirect( base_url('login') );
 }
-$head_userinfo=$this->User_data->userinfo( $head_id );
+$head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
 
 
 ?>
@@ -102,16 +102,16 @@ $head_userinfo=$this->User_data->userinfo( $head_id );
                                 </div>
                             </li>
                             <?
-                            $query = $this->User_data->header_message( $head_id ); //msg query
+                            $query = $this->User_data->header_message( $head_id ); //msg query 获取有关于登陆者的信息
                             if ($query->num_rows() > 0)
                             {
                                 foreach ( $query->result() as $row)
                                 {
-                                    $msguserfrom = $this->User_data->userinfo( $row->from );
+                                    $msguserfrom = $this->User_data->userinfo( $row->from );//获取msg来源者的个人信息
                                     if($row->from != $head_userinfo['student_id']) {
                                         ?>
                                 <li class="item">
-                                    <a href="#">
+                                    <a href="<?$usersid = "user/sid/".$msguserfrom['student_id'];echo base_url("$usersid");//跳转到用户页?>">
                                         <img style="width:35px;"
                                              src="<?$head_img = "public/images/" . $msguserfrom['head_img'];
                                              echo base_url("$head_img");?>" alt=""/><!--发送信息者头像-->
@@ -124,7 +124,7 @@ $head_userinfo=$this->User_data->userinfo( $head_id );
                                             </span>
                                         </span>
                                         <span class="time"><i
-                                                class="fa fa-clock-o"></i><?echo $row->data;?></span>
+                                                class="fa fa-clock-o"></i><?echo $row->date;?></span>
                                     </a>
                                 </li>
                                     <?

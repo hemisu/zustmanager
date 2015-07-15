@@ -140,14 +140,14 @@
                         </ul>
                     </div>-->
                     <div class="profile-message-btn center-block text-center">
-                        <a href="#mydata" class="btn btn-success">
+                        <!--<a href="#mydata" class="btn btn-success">
                             <i class="fa fa-cog"></i>
                             修改资料
-                        </a>
-                        <!--<a href="#" class="btn btn-success">
+                        </a>-->
+                        <a href="#" class="btn btn-success">
                             <i class="fa fa-envelope"></i>
                             发送消息
-                        </a>-->
+                        </a>
                     </div>
                 </div>
             </div>
@@ -169,42 +169,52 @@
                                         <div class="conversation-content">
                                             <div class="conversation-inner">
                                             <?
-                                            $query = $this->User_data->header_message( $this->session->userdata('student_id') ); //msg query
+                                            $query = $this->User_data->message( $this->session->userdata('student_id') ); //msg query
                                             if ($query->num_rows() > 0)
                                             {
                                                 foreach ( $query->result() as $row)
                                                 {
-                                                    $msguserfrom = $this->User_data->userinfo( $row->from )
-                                                    ?>
+                                                    $msguserfrom = $this->User_data->userinfo( $row->from );
+                                                    if($row->from == $userinfo['student_id']||$row->to == $userinfo['student_id']) {
+                                                        ?>
 
-                                                    <div class="conversation-item <?if($row->from == $userinfo['student_id']) {echo "item-right";}else{echo "item-left";}?> clearfix">
-                                                        <div class="conversation-user">
-                                                            <img style="width:50px;" src="<?$head_img = "public/images/".$msguserfrom['head_img'];echo base_url("$head_img");?>" alt="">
+                                                        <div
+                                                            class="conversation-item <?if ($row->from != $userinfo['student_id']) {
+                                                                echo "item-right";
+                                                            } else {
+                                                                echo "item-left";
+                                                            } ?> clearfix">
+                                                            <div class="conversation-user">
+                                                                <img style="width:50px;"
+                                                                     src="<?$head_img = "public/images/" . $msguserfrom['head_img'];
+                                                                     echo base_url("$head_img"); ?>" alt="">
+                                                            </div>
+                                                            <div class="conversation-body">
+                                                                <div class="name">
+                                                                    <?echo $msguserfrom['username']; ?> <!--发送信息者名字-->
+                                                                </div>
+                                                                <div class="time hidden-xs">
+                                                                    <?echo $row->date; ?>
+                                                                </div>
+                                                                <div class="text">
+                                                                    <?echo $row->content; ?> <!--信息内容-->
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="conversation-body">
-                                                            <div class="name">
-                                                                <?echo $msguserfrom['username'];?> <!--发送信息者名字-->
-                                                            </div>
-                                                            <div class="time hidden-xs">
-                                                                <?echo $row->data;?>
-                                                            </div>
-                                                            <div class="text">
-                                                                <?echo $row->content;?> <!--信息内容-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?
+                                                    <?
+                                                    }
                                                 }
                                             }
                                             ?>
                                             </div>
                                         </div>
-                                        <div class="conversation-new-message">send($toid = null ,$fromid = null ,$text = null)
-                                            <?=$userinfo['student_id'];?><?=$userinfo['student_id'];?>
+                                        <div class="conversation-new-message">
                                             <form method="post" action="<?echo base_url('msg/send')?>">
-                                                <input style="display: none" name="toid" value="$">
+                                                <input type="hidden" name="current_url" value="<?=current_url();?>">
+                                                <input type="hidden" name="toid" value="<?=$userinfo['student_id']?>">
+                                                <input type="hidden" name="fromid" value="<?=$this->session->userdata('student_id')?>">
                                                 <div class="form-group">
-                                                    <textarea class="form-control" rows="2" placeholder="Enter your message..."></textarea>
+                                                    <textarea class="form-control" rows="2" name="text" placeholder="发信息给<?=$userinfo['username']?>..."></textarea>
                                                 </div>
                                                 <div class="clearfix">
                                                     <button type="submit" class="btn btn-success pull-right">Send message</button>
@@ -242,31 +252,4 @@
 
 
 </body>
-<div class="modal fade" id="headmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">修改头像</h4>
-            </div>
-            <div class="modal-body">
-                <form action="<?echo base_url('login/head_img')?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-                    <div class="form-group">
-
-                        <label for="exampleInputHead_img">邮箱</label>
-                        <input type="file" name="userfile" size="20" />
-
-                    </div>
-
-
-
-                <div class="modal-footer">
-                    <input type="hidden" name="current_url" value="<?=current_url();?>">
-                    <button type="submit" class="btn btn-primary">保存</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </html>

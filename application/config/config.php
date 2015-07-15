@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/manager';
+$config['base_url'] = 'http://localhost/zustmanager';
 //http://localhost/manager
 //http://hemisu.oicp.net/manager
 /*

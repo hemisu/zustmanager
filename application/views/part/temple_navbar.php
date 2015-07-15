@@ -15,7 +15,7 @@
 
                     <div class="user-box">
                                 <span class="name">
-                                Welcome <br/><?echo $userinfo['username'];//登陆者名字?>
+                                Welcome <br/><?echo $this->session->userdata('username');//登陆者名字?>
                                 </span>
                                 <span class="status">
                                 <?

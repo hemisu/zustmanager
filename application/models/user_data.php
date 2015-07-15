@@ -85,12 +85,12 @@ class User_data extends CI_Model
     }
 
     function header_message( $id = null ){//msg信息获取
-        $this->db->select('*')->from('msg','msgcontent')->where( 'to' , $id)->or_where( 'from' , $id)->join('msgcontent', 'msgcontent.id = msg.msgid')->limit(5); //Create query command
+        $this->db->select('*')->from('msg','msgcontent')->where( 'to' , $id)->join('msgcontent', 'msgcontent.id = msg.msgid')->order_by("date", "desc")->limit(5); ; //Create query command
         $query = $this->db->get(); //Process query
         return $query;
     }
-    function message( $toid = null , $fromid = null){//msg信息获取
-        $this->db->select('*')->from('msg','msgcontent')->where( 'to' , $toid)->where( 'from' , $fromid)->join('msgcontent', 'msgcontent.id = msg.msgid')->limit(5); //Create query command
+    function message( $id = null ){//msg信息获取
+        $this->db->select('*')->from('msg','msgcontent')->where( 'to' , $id)->or_where( 'from' , $id)->join('msgcontent', 'msgcontent.id = msg.msgid')->order_by("date", "asc"); //Create query command
         $query = $this->db->get(); //Process query
         return $query;
     }
@@ -100,14 +100,12 @@ class User_data extends CI_Model
             'content' => $text
         );
         $this->db->insert('msgcontent', $data);
-        $query = $this->db->query('SELECT LAST_INSERT_ID()');
-        $result=mysql_query($query);
-        $rows=mysql_fetch_row($result);
-        echo $rows[0];
         $data = array(
             'to' => $toid ,
             'from' => $fromid ,
-            'msgid' => $rows[0]
+            'msgid' => $this->db->insert_id(),//获取insert的ID
+            'status' => '0',
+            'date' => date("Y-m-d H:i:s")
         );
 
         $this->db->insert('msg', $data);

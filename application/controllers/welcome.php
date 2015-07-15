@@ -34,6 +34,12 @@ class Welcome extends CI_Controller {
     {
         $this->load->view('part/success');
     }
+    public function sendmessage()
+    {
+        $this->load->model('User_data'); //加载User_data模块
+        $this->User_data->sent_message( '1130320108' ,'1130320106' ,'testidi1nd');
+
+    }
 
 }
 
