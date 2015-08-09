@@ -19,7 +19,7 @@
                                 </span>
                                 <span class="status">
                                 <?
-                                    if($userinfo['status']){
+                                    if($loginUserInfo['status']){
                                         echo "<i class='fa fa-circle'></i> Online";
                                     }else{
                                         echo "<div style='color:#95A5A6;'><i class='fa fa-circle'></i> Offline</div>";

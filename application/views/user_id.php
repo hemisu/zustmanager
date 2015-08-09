@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
 
-    <script src="js/demo-rtl.js"></script>
+    <script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
@@ -72,8 +72,8 @@
                         ?>
 
                     </div>
-                    <a data-toggle="modal" href="#headmodal"><img src="<?$head_img = "public/images/".$userinfo['head_img'];echo base_url("$head_img");?>" alt=""
-                         class="profile-img img-responsive center-block"/></a>
+                    <img src="<?$head_img = "public/images/".$userinfo['head_img'];echo base_url("$head_img");?>" alt=""
+                         class="profile-img img-responsive center-block"/>
 
                     <div class="profile-label">
                         <span class="label label-danger">
@@ -174,12 +174,12 @@
                                             {
                                                 foreach ( $query->result() as $row)
                                                 {
-                                                    $msguserfrom = $this->User_data->userinfo( $row->from );
-                                                    if($row->from == $userinfo['student_id']||$row->to == $userinfo['student_id']) {
+                                                    $msguserfrom = $this->User_data->userinfo( $row->fromid );
+                                                    if($row->fromid == $userinfo['student_id']||$row->toid == $userinfo['student_id']) {
                                                         ?>
 
                                                         <div
-                                                            class="conversation-item <?if ($row->from != $userinfo['student_id']) {
+                                                            class="conversation-item <?if ($row->fromid != $userinfo['student_id']) {
                                                                 echo "item-right";
                                                             } else {
                                                                 echo "item-left";

@@ -7,11 +7,11 @@
  */
 $this->load->model('User_data'); //加载User_data模块
 
-$head_id = $this->session->userdata('student_id');//从session处获得登陆者信息
+$loginUserid = $this->session->userdata('student_id');//从session处获得登陆者信息
 if($this->User_data->is_login() == False){
     redirect( base_url('login') );
 }
-$head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
+$loginUserInfo=$this->User_data->userinfo( $loginUserid );//登陆者信息
 
 
 ?>
@@ -60,7 +60,7 @@ $head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
                     <li class="dropdown hidden-xs">
                         <a class="btn dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-warning"></i>
-                            <span class="count">8</span><!--任务提醒计数-->
+                            <span class="count">2</span><!--任务提醒计数-->
                         </a>
                         <ul class="dropdown-menu notifications-list">
                             <li class="pointer">
@@ -93,7 +93,7 @@ $head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
                     <li class="dropdown hidden-xs">
                         <a class="btn dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
-                            <span class="count">2</span>
+                            <span class="count"><? echo $this->User_data->header_message_num($loginUserid);?></span>
                         </a>
                         <ul class="dropdown-menu notifications-list messages-list">
                             <li class="pointer">
@@ -102,13 +102,13 @@ $head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
                                 </div>
                             </li>
                             <?
-                            $query = $this->User_data->header_message( $head_id ); //msg query 获取有关于登陆者的信息
+                            $query = $this->User_data->header_message( $loginUserid ); //msg query 获取有关于登陆者的信息
                             if ($query->num_rows() > 0)
                             {
                                 foreach ( $query->result() as $row)
                                 {
-                                    $msguserfrom = $this->User_data->userinfo( $row->from );//获取msg来源者的个人信息
-                                    if($row->from != $head_userinfo['student_id']) {
+                                    $msguserfrom = $this->User_data->userinfo( $row->fromid );//获取msg来源者的个人信息
+                                    if($row->fromid != $loginUserInfo['student_id']) {
                                         ?>
                                 <li class="item">
                                     <a href="<?$usersid = "user/sid/".$msguserfrom['student_id'];echo base_url("$usersid");//跳转到用户页?>">
@@ -147,8 +147,8 @@ $head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
                     </li>-->
                     <li class="dropdown profile-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="<?$head_img = "public/images/".$head_userinfo['head_img'];echo base_url("$head_img");?>" alt=""/>
-                            <span class="hidden-xs"><?echo $head_userinfo['username'];//登陆者名字?></span> <b class="caret"></b>
+                            <img src="<?$head_img = "public/images/".$loginUserInfo['head_img'];echo base_url("$head_img");?>" alt=""/>
+                            <span class="hidden-xs"><?echo $loginUserInfo['username'];//登陆者名字?></span> <b class="caret"></b>
                         </a>
 
                         <ul class="dropdown-menu">
@@ -178,15 +178,15 @@ $head_userinfo=$this->User_data->userinfo( $head_id );//登陆者信息
                 <h4 class="modal-title">修改资料</h4>
             </div>
             <div class="modal-body">
-                <form role="form" action="<?php echo base_url('/login/update_self');?>" method="post">
+                <form role="form" action="<?php echo base_url('/user/update_self');?>" method="post">
                     <div class="form-group">
 
                         <label for="exampleInputEmail1">邮箱</label>
-                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="请输入邮箱" value="<?echo $head_userinfo['email'];//登陆者邮箱?>">
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="请输入邮箱" value="<?echo $loginUserInfo['email'];//登陆者邮箱?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">QQ号</label>
-                        <input type="text" class="form-control" name="qq" id="exampleInputQQ" placeholder="请输入QQ" value="<?echo $head_userinfo['qq'];//登陆者QQ?>">
+                        <input type="text" class="form-control" name="qq" id="exampleInputQQ" placeholder="请输入QQ" value="<?echo $loginUserInfo['qq'];//登陆者QQ?>">
                     </div>
 
                     <div class="row">

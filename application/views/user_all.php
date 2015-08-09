@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
 
-    <script src="js/demo-rtl.js"></script>
+    <script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <ol class="breadcrumb">
-                                <li><a href="#">主页</a></li>
+                                <li><a href="<?php echo base_url(); ?>">主页</a></li>
                                 <li class="active"><span>用户</span></li>
                             </ol>
                             <div class="clearfix">
@@ -174,24 +174,5 @@
 
 <script src="<?php echo base_url(); ?>js/scripts.js"></script>
 <script src="<?php echo base_url(); ?>js/pace.min.js"></script>
-<script>
-    $(document).ready(function () {
-        var table = $('#table-example').dataTable({
-            'info': true,
-            'sDom': 'l<"clearfix">tip'
-
-        });
-
-        //var tt = new $.fn.dataTable.TableTools( table );
-        //$( tt.fnContainer() ).insertBefore('div.dataTables_wrapper');
-
-        var tableFixed = $('#table-example-fixed').dataTable({
-            'info': false,
-            'pageLength': 50
-        });
-
-        new $.fn.dataTable.FixedHeader(tableFixed);
-    });
-</script>
 </body>
 </html>

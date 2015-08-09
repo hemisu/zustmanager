@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
 
-    <script src="js/demo-rtl.js"></script>
+    <script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <ol class="breadcrumb">
-                                <li><a href="#">主页</a></li>
+                                <li><a href="<?php echo base_url(); ?>">主页</a></li>
                                 <li class="active"><span>用户</span></li>
                             </ol>
                             <div class="clearfix">

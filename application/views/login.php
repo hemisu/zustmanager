@@ -24,9 +24,6 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/compiled/theme_styles.css"/>
 
-
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
-
     <link type="image/x-icon" href="<?php echo base_url();?>favicon.png" rel="shortcut icon"/>
     <!--[if lt IE 9]>
     <script src="<?php echo base_url();?>js/html5shiv.js"></script>

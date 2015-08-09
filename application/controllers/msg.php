@@ -23,7 +23,8 @@ class Msg extends CI_Controller
         $this->load->model('User_data'); //Load user data model
         if($this->User_data->sent_message($toid,$fromid,$text)){
             header("refresh:2;url=$current_url");
-            $this->load->view('part/success');
+            $sucinfo['success'][]="信息发送成功";
+            $this->load->view('part/success',$sucinfo);
         }else{
             echo "发送失败";
         }

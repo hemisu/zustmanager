@@ -49,20 +49,22 @@
                     <div id="error-box">
                         <div class="row">
                             <div class="col-xs-12" style="min-height: 900px;">
-                                <div id="error-box-inner">
-                                    <img src="<?php echo base_url(); ?>img/error-404-v2.png" alt="Have you seen this page?"/>
-                                </div>
                                 <h1>成功</h1>
                                 <p>
                                 <div class="alert alert-success">
-                                    <i class="fa fa-times-circle fa-fw fa-lg"></i>
-                                    <strong>成功!</strong> <?
-                                    $success="";
-                                    echo $success;?>.
+                                    <i class="fa fa-check-circle fa-fw fa-lg"></i>
+                                    <strong>成功!</strong>
+                                    <br />
+                                    <?
+                                    foreach ($success as $key => $value) {
+                                        echo $value . "<br />";
+                                    }
+                                    ?>.
+                                    3秒后返回.
                                 </div>
                                 </p>
                                 <p>
-                                    Go back to <a href="<?php echo base_url('login'); ?>">homepage</a>.
+                                    返回 <a onclick="history.go(-1)">上一页</a>.
                                 </p>
                             </div>
                         </div>

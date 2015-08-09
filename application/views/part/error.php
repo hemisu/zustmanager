@@ -51,7 +51,12 @@
                             <p>
                             <div class="alert alert-danger">
                                 <i class="fa fa-times-circle fa-fw fa-lg"></i>
-                                <strong>错误!</strong> <?echo $error;?>.
+                                <strong>错误!</strong> <?
+                                foreach ($error as $key => $value) {
+                                    echo $value . "<br />";
+                                }
+                                ?>.
+                                3秒后返回.
                             </div>
                             </p>
                             <p>
