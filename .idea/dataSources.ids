@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hemisuna_manager@localhost" uuid="c8a79156-44d2-4e85-93c5-f5406bd22059">
+    <database-info product="MySQL" version="5.5.34" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="hemisuna_manager"/>
+    <table name="appleid" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_id" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="appleid" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="log" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_id" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="events" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="msg" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fromid" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
+      <column name="toid" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
+      <column name="msgid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="msgcontent" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_id" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="atschool" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="head_img" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="qq" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="majoryear" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1" def="JzEzJw=="/>
+      <column name="major" sqlType="VARCHAR" precision="12" scale="0" nullable="false" jdbcType="12"/>
+      <column name="classnum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role_id" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="sex" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="card_id" sqlType="CHAR" precision="18" scale="0" nullable="true" jdbcType="1"/>
+      <column name="long_phone" sqlType="CHAR" precision="11" scale="0" nullable="true" jdbcType="1"/>
+      <column name="short_phone" sqlType="CHAR" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="lastLoginTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="lastLoginoutTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+    </table>
+    <table name="zc" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="student_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="major" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="classnum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ztyxf" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5oC75L2T5Y2w6LGh5YiG"/>
+      <column name="xtyxfb" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="5qCh54m55LyY5a2m6aOO54+t"/>
+      <column name="xylxfb" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="5qCh5LyY6Imv5a2m6aOO54+t"/>
+      <column name="yylxfb" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="6Zmi5LyY6Imv5a2m6aOO54+t"/>
+      <column name="xxjtzb" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="5qCh5YWI6L+b5Zui5pSv6YOo"/>
+      <column name="yxqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5LyY56eA5a+d5a6k"/>
+      <column name="qtxjxjjt" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5YW25LuW5qCh57qn5YWI6L+b6ZuG5L2T"/>
+      <column name="tbby" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6YCa5oql6KGo5oms"/>
+      <column name="zgdb" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5pKw56i/55m75pKt"/>
+      <column name="wxtchlwjy" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5Li65qCh77yI6Zmi77yJ5o+Q5Ye65ZCI55CG5YyW5bu66K6u"/>
+      <column name="ejxyqdjf" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5LqM57qn5a2m6Zmi56Gu5a6a55qE5Yqg5YiG"/>
+      <column name="xssc90" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5a2m55Sf5omL5YaM6ICD5p+lOTDliIbku6XkuIo="/>
+      <column name="zyzdx" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6Z2S5Y2P5pif57qn5b+X5oS/6ICF77yM5YWa5qCh5LyY56eA5a2m5ZGY"/>
+      <column name="yjtbby" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6Zmi57qn6YCa5oql6KGo5oms"/>
+      <column name="yjyxtzb" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6Zmi57qn5LyY56eA5Zui5pSv6YOo"/>
+      <column name="xx" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54yu6KGA"/>
+      <column name="pwjns" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5o6S6Iie5ZCJ5bC85pav"/>
+      <column name="wsyx" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Y+C5Yqg5LqU5Zub5q+F6KGM"/>
+      <column name="ktxwgf" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K++5aCC6KGM5Li66KeE6IyD"/>
+      <column name="ssjf" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5a6/6IiN5YeP5YiG"/>
+      <column name="bwmxwsj" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5LiN5paH5piO6KGM5Li657qq5a6e"/>
+      <column name="wjcf" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6L+d57qq5aSE5YiG"/>
+      <column name="rjxyqdjf" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5LqM57qn5a2m6Zmi56Gu5a6a55qE5YeP5YiG"/>
+      <column name="xsgbkhbhg" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5a2m55Sf5bmy6YOo6ICD5qC45LiN5ZCI5qC8"/>
+      <column name="sxxcxy70" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="44CK5a2m55Sf5omL5YaM44CL5YaF5a656ICD5p+lNzDliIbku6XkuIvmiJbkuI3lj4LliqDogIPmn6XogIU="/>
+      <column name="bcjsqsqshhd" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5LiN5Y+C5Yqg5pqR5pyf56S+5Lya5a6e6Le15rS75Yqo"/>
+      <column name="wgbasjf" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5peg5pWF5LiN5oyJ5pe257y05LuY5a2m5p2C6LS55oiW5Yqe55CG55u45YWz5omL57ut"/>
+      <column name="dybeizhu" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5b636IKy5aSH5rOo"/>
+      <column name="all" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5a2m5Lia5oiQ57up"/>
+      <column name="sports" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="hadcredit" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="average" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="gk" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="5piv5ZCm5oyC56eR"/>
+      <column name="zypm" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5LiT5Lia5o6S5ZCN"/>
+      <column name="fxk" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L6F5L+u6K++"/>
+      <column name="xsbg" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5ZCs5a2m5pyv6K6y5bqn5oql5ZGK"/>
+      <column name="zs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="english" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Iux6K+t5Zub5YWt57qn"/>
+      <column name="enky" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Iux6K+t5Lit57qn5Y+j6K+R"/>
+      <column name="computer" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6K6h566X5py65LqM57qn"/>
+      <column name="jz" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6am+54Wn"/>
+      <column name="z1" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="z8" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="z5" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="z3" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="shsj" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="56S+5Lya5a6e6Le1"/>
+      <column name="hjjn" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="54SK5o6l5oqA6IO95q+U6LWb"/>
+      <column name="wxdcx" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5peg57q/55S15rWL5ZCR"/>
+      <column name="tzb" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5oyR5oiY5p2v"/>
+      <column name="zzjs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="56ev5p6B5Y+C5Yqg56ue6LWb"/>
+      <column name="bhbs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5ouU5rKz5q+U6LWb"/>
+      <column name="ydy" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5pyI"/>
+      <column name="5000" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5LyaNTAwMA=="/>
+      <column name="1500" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya5aWz5a2QMTUwMA=="/>
+      <column name="fzgbc" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya5pa56Zi144CB5bm/5pKt5pON"/>
+      <column name="ydhfzr" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya6LSf6LSj5Lq65Y+K5YW25bel5L2c5Lq65ZGY"/>
+      <column name="sjqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Zmi5Y2B5L2z5a+d5a6k"/>
+      <column name="fzr" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5rS75Yqo6LSf6LSj5Lq6"/>
+      <column name="wmqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5paH5piO5a+d5a6k"/>
+      <column name="wmqsry" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+b6KGM5paH5piO5a+d5a6k5bu66K6+55qE5Lq65ZGY"/>
+      <column name="nlbeizhu" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="6IO95Yqb5aSH5rOo"/>
+      <primary-key name="PRIMARY" columns="student_id"/>
+    </table>
+  </data-source>
+</component>

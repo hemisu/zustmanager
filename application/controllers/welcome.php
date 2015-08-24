@@ -1,15 +1,16 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
+	 *    http://example.com/index.php/welcome
+	 *  - or -
+	 *    http://example.com/index.php/welcome/index
+	 *  - or -
 	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
@@ -19,27 +20,29 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->helper('url');
-        echo base_url();
-        echo "<br>";
-        echo base_url('public/images/');
+		$this->load->helper('url');
+		echo base_url();
+		echo "<br>";
+		echo base_url('public/images/');
 		$this->load->view('welcome_message');
 	}
 
-    public function error()
-    {
-        $this->load->view('part/error');
-    }
-    public function success()
-    {
-        $this->load->view('part/success');
-    }
-    public function sendmessage()
-    {
-        $this->load->model('User_data'); //加载User_data模块
-        $this->User_data->sent_message( '1130320108' ,'1130320106' ,'testidi1nd');
+	public function error()
+	{
+		$this->load->view('part/error');
+	}
 
-    }
+	public function success()
+	{
+		$this->load->view('part/success');
+	}
+
+	public function sendmessage()
+	{
+		$this->load->model('User_data'); //加载User_data模块
+		$this->User_data->sent_message('1130320108', '1130320106', 'testidi1nd');
+
+	}
 
 }
 

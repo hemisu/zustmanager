@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - hemisuna_manager@localhost" uuid="c8a79156-44d2-4e85-93c5-f5406bd22059">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>hemisuna_manager.*</schema-pattern>
+      <default-schemas>hemisuna_manager.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+

@@ -10,70 +10,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>成功提示 - 学生管理系统</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>成功提示 - 学生管理系统</title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
 
-    <script src="js/demo-rtl.js"></script>
+	<script src="js/demo-rtl.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
 
-    <link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
 
-    <!--[if lt IE 9]>
-    <script src="<?php echo base_url(); ?>js/html5shiv.js"></script>
-    <script src="<?php echo base_url(); ?>js/respond.min.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>
+	<script src="<?php echo base_url(); ?>js/html5shiv.js"></script>
+	<script src="<?php echo base_url(); ?>js/respond.min.js"></script>
+	<![endif]-->
 
 
 </head>
 <body>
 <div id="theme-wrapper">
-    <?php require_once('temple_header.php');//header样式个性设置?>
-    <div id="page-wrapper" class="container nav-small">
-        <?php require_once('temple_navbar.php');//navbar样式个性设置?>
+	<?php require_once('temple_header.php');//header样式个性设置?>
+	<div id="page-wrapper" class="container nav-small">
+		<?php require_once('temple_navbar.php');//navbar样式个性设置?>
 
 
-        <div id="content-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="error-box">
-                        <div class="row">
-                            <div class="col-xs-12" style="min-height: 900px;">
-                                <h1>成功</h1>
-                                <p>
-                                <div class="alert alert-success">
-                                    <i class="fa fa-check-circle fa-fw fa-lg"></i>
-                                    <strong>成功!</strong>
-                                    <br />
-                                    <?
-                                    foreach ($success as $key => $value) {
-                                        echo $value . "<br />";
-                                    }
-                                    ?>.
-                                    3秒后返回.
-                                </div>
-                                </p>
-                                <p>
-                                    返回 <a onclick="history.go(-1)">上一页</a>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php require_once('temple_footer.php');//footer样式个性设置?>
-        </div>
-    </div>
+		<div id="content-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="error-box">
+						<div class="row">
+							<div class="col-xs-12" style="min-height: 900px;">
+								<h1>成功</h1>
+
+								<p>
+
+								<div class="alert alert-success">
+									<i class="fa fa-check-circle fa-fw fa-lg"></i>
+									<strong>成功!</strong>
+									<br/>
+									<?
+									foreach ($success as $key => $value) {
+										echo $value . "<br />";
+									}
+									?>.
+									3秒后返回.
+								</div>
+								</p>
+								<p>
+									返回 <a onclick="history.go(-1)">上一页</a>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php require_once('temple_footer.php');//footer样式个性设置?>
+		</div>
+	</div>
 </div>
 </div>
 <?php require_once('temple_config_tool.php');//右侧样式个性设置?>
