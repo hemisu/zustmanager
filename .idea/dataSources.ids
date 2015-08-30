@@ -98,6 +98,7 @@
       <column name="gk" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="5piv5ZCm5oyC56eR"/>
       <column name="zypm" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5LiT5Lia5o6S5ZCN"/>
       <column name="fxk" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L6F5L+u6K++"/>
+      <column name="zysy" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L6F5L+u6K++"/>
       <column name="xsbg" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5ZCs5a2m5pyv6K6y5bqn5oql5ZGK"/>
       <column name="zs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
       <column name="english" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Iux6K+t5Zub5YWt57qn"/>
@@ -108,15 +109,19 @@
       <column name="z8" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
       <column name="z5" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
       <column name="z3" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="xjgr" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5YWI6L+b5Liq5Lq6"/>
       <column name="shsj" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="56S+5Lya5a6e6Le1"/>
+      <column name="cjkfxsy" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5Y+C5Yqg5byA5pS+5oCn6K+V6aqM"/>
+      <column name="csfm" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5bCd6K+V5Y+R5piO"/>
       <column name="hjjn" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="54SK5o6l5oqA6IO95q+U6LWb"/>
       <column name="wxdcx" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5peg57q/55S15rWL5ZCR"/>
       <column name="tzb" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5oyR5oiY5p2v"/>
       <column name="zzjs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="56ev5p6B5Y+C5Yqg56ue6LWb"/>
-      <column name="bhbs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5ouU5rKz5q+U6LWb"/>
       <column name="ydy" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5pyI"/>
-      <column name="5000" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5LyaNTAwMA=="/>
-      <column name="1500" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya5aWz5a2QMTUwMA=="/>
+      <column name="hyjt" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5byY5q+F6K6y5aCC"/>
+      <column name="ydh" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5Y+C5Yqg6L+Q5Yqo5Lya6aG555uu"/>
+      <column name="r5000" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5LyaNTAwMA=="/>
+      <column name="r1500" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya5aWz5a2QMTUwMA=="/>
       <column name="fzgbc" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya5pa56Zi144CB5bm/5pKt5pON"/>
       <column name="ydhfzr" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5Lya6LSf6LSj5Lq65Y+K5YW25bel5L2c5Lq65ZGY"/>
       <column name="sjqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Zmi5Y2B5L2z5a+d5a6k"/>
@@ -124,6 +129,8 @@
       <column name="wmqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5paH5piO5a+d5a6k"/>
       <column name="wmqsry" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+b6KGM5paH5piO5a+d5a6k5bu66K6+55qE5Lq65ZGY"/>
       <column name="nlbeizhu" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="6IO95Yqb5aSH5rOo"/>
+      <column name="gxyb" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Zmi5p2vIOS4quaAp+agjw=="/>
+      <column name="gxydh" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5LyaIOS4quaAp+agjw=="/>
       <primary-key name="PRIMARY" columns="student_id"/>
     </table>
   </data-source>

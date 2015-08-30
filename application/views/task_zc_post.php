@@ -129,7 +129,7 @@ if ($ifex=0) {//班长提交后变1
 				</label>
 			</div>
 			<div class="form-group">
-				<label>通报表扬 (2分一次 需要在下面备注)</label>
+				<label>通报表扬 (2分一次 需要在下面备注，不包括五四毅行)</label>
 				<input class="form-control" type="text" name="deyu[tbby]" value="<?echo $zcmasterinfo->tbby;?>">
 			</div>
 			<div class="form-group">
@@ -146,44 +146,51 @@ if ($ifex=0) {//班长提交后变1
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[xssc90]">
 					<input type="checkbox" value="2" name="deyu[xssc90]" <?if($zcmasterinfo->xssc90){echo 'checked';}?>>
 					学生手册考查90分以上
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[zyzdx]">
 					<input type="checkbox" value="2" name="deyu[zyzdx]" <?if($zcmasterinfo->zyzdx){echo 'checked';}?>>
 					青协星级志愿者，党校优秀学员 加2分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[yjtbby]">
 					<input type="checkbox" value="2" name="deyu[yjtbby]" <?if($zcmasterinfo->yjtbby){echo 'checked';}?>>
-					院级通报表扬 加2分
+					院级通报表扬 加2分（参加五四毅行全程）
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[yjyxtzb]">
 					<input type="checkbox" value="1" name="deyu[yjyxtzb]" <?if($zcmasterinfo->yjyxtzb){echo 'checked';}?>>
 					院级优秀团支部 加1分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[xx]">
 					<input type="checkbox" value="3" name="deyu[xx]" <?if($zcmasterinfo->xx){echo 'checked';}?>>
 					献血 加3分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[pwjns]">
 					<input type="checkbox" value="1" name="deyu[pwjns]" <?if($zcmasterinfo->pwjns){echo 'checked';}?>>
 					排舞吉尼斯 加1分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[wsyx]">
 					<input type="checkbox" value="1" name="deyu[wsyx]" <?if($zcmasterinfo->wsyx){echo 'checked';}?>>
-					参加五四毅行 1分（参加五四毅行全程为院级通报表扬）
+					参加五四毅行 加1分（参加五四毅行）
 				</label>
 			</div>
 
@@ -219,24 +226,28 @@ if ($ifex=0) {//班长提交后变1
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[xsgbkhbhg]">
 					<input type="checkbox" value="-2" name="deyu[xsgbkhbhg]" <?if($zcmasterinfo->xsgbkhbhg){echo 'checked';}?>>
 					学生干部考核不合格 扣2分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[sxxcxy70]">
 					<input type="checkbox" value="-3" name="deyu[sxxcxy70]" <?if($zcmasterinfo->sxxcxy70){echo 'checked';}?>>
 					《学生手册》内容考查70分以下或不参加考查者（含试读生）扣3分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[bcjsqsqshhd]">
 					<input type="checkbox" value="-3" name="deyu[bcjsqsqshhd]" <?if($zcmasterinfo->bcjsqsqshhd){echo 'checked';}?>>
 					不参加暑期社会实践活动 扣3分
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
+					<input type="hidden" value="0" name="deyu[wgbasjf]">
 					<input type="checkbox" value="-6" name="deyu[wgbasjf]" <?if($zcmasterinfo->wgbasjf){echo 'checked';}?>>
 					无故不按时缴付学杂费或办理相关手续 扣6分
 				</label>
@@ -296,7 +307,7 @@ if ($ifex=0) {//班长提交后变1
 <h4>能力成绩 （满分15）</h4>
 
 <p>能力测评的基本分为6分，能力测评奖励分最高不超过9分。</p>
-
+<p>基本分已添加，仅需填写奖励分。</p>
 <div class="col-lg-6">
 	<h3><span>自主学习</span></h3>
 
@@ -414,6 +425,14 @@ if ($ifex=0) {//班长提交后变1
 		</label>
 	</div>
 	<div class="form-group">
+		<label>参加开放性实验（每参加一项加0.1分）</label>
+		<input class="form-control" id="sports" type="text" name="nl[cjkfxsy]" value="<?echo $zcmasterinfo->cjkfxsy;?>" >
+	</div>
+	<div class="form-group">
+		<label>尝试发明（以受理单为依据每项0.1分）</label>
+		<input class="form-control" id="sports" type="text" name="nl[csfm]" value="<?echo $zcmasterinfo->csfm;?>" >
+	</div>
+	<div class="form-group">
 		<label>焊接技能比赛</label>
 		<select class="form-control" name="nl[hjjn]">
 			<option value="0" <?if($zcmasterinfo->hjjn== 0){echo 'selected';}?>>点击选择</option>
@@ -442,15 +461,6 @@ if ($ifex=0) {//班长提交后变1
 			<input type="checkbox" value="0.1" name="nl[zzjs]" <?if($zcmasterinfo->zzjs){echo 'checked';}?>>
 			积极参加校组织及以上的各项竞赛（如数学建模、电子设计竞赛等）（参与全过程但<strong><span style="color : red;">未获奖</span></strong>）0.1分
 		</label>
-	</div>
-	<div class="form-group">
-		<label>电气学院举行的拔河比赛</label>
-		<select class="form-control" name="nl[bhbs]">
-			<option value="0" <?if($zcmasterinfo->bhbs== 0){echo 'selected';}?>>点击选择</option>
-			<option value="0.5" <?if($zcmasterinfo->bhbs== 0.5){echo 'selected';}?>>第三名 0.5分</option>
-			<option value="0.7" <?if($zcmasterinfo->bhbs== 0.7){echo 'selected';}?>>第二名 0.7分</option>
-			<option value="1" <?if($zcmasterinfo->bhbs== 1){echo 'selected';}?>>第一名 1分</option>
-		</select>
 	</div>
 	<div class="form-group">
 		<label>运动月（需要备注内容）</label>
@@ -528,29 +538,190 @@ if ($ifex=0) {//班长提交后变1
 		<h4>个性 （满分40）</h4>
 
 		<p>个性分为裸加</p>
-
 		<div class="col-lg-6">
-			<h3><span>二级学院所组织的项目</span></h3>
-
-			<div class="form-group">
-				<label>运动会院杯</label>
-				<select class="form-control" name="gx[gxyb]">
-					<option value="0" <?if($zcmasterinfo->gxyb== 0){echo 'selected';}?>>点击选择</option>
-					<option value="0.5" <?if($zcmasterinfo->gxyb== 0.5){echo 'selected';}?>>三等奖 0.5</option>
-					<option value="1" <?if($zcmasterinfo->gxyb== 1){echo 'selected';}?>>二等奖 1</option>
-					<option value="2" <?if($zcmasterinfo->gxyb== 2){echo 'selected';}?>>一等奖 2</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label>运动会</label>
-				<select class="form-control" name="gx[gxydh]">
-					<option value="0" <?if($zcmasterinfo->gxydh== 0){echo 'selected';}?>>点击选择</option>
-					<option value="0.5" <?if($zcmasterinfo->gxydh== 0.5){echo 'selected';}?>>三等奖 0.5</option>
-					<option value="1" <?if($zcmasterinfo->gxydh== 1){echo 'selected';}?>>二等奖 1</option>
-					<option value="2" <?if($zcmasterinfo->gxydh== 2){echo 'selected';}?>>一等奖 2</option>
-				</select>
-			</div>
-			<h3><span>其他项目请自行添加</span></h3>
+			<table class="table table-condensed table-striped table-bordered">
+				<tr>
+					<td width="33">类别</td>
+					<td width="31">序号</td>
+					<td width="177">竞赛名称</td>
+					<td width="35">序号</td>
+					<td width="193">竞赛名称</td>
+				</tr>
+				<tr>
+					<td width="33" rowspan="10">A</td>
+					<td width="31">1</td>
+					<td width="177">机械创新设计竞赛</td>
+					<td width="35">11</td>
+					<td width="193">浙江省第三届大学生工业设计竞赛</td>
+				</tr>
+				<tr>
+					<td width="31">2</td>
+					<td width="177">浙江省大学生电子设计竞赛</td>
+					<td width="35">12</td>
+					<td width="193">浙江省大学生财会信息化竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">3</td>
+					<td width="177">全国大学生&ldquo;飞思卡尔&rdquo;杯智能汽车竞赛 </td>
+					<td width="35">13</td>
+					<td width="193">浙江省大学生电子商务竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">4</td>
+					<td width="177">浙江省大学生多媒体设计大赛 </td>
+					<td width="35">14</td>
+					<td width="193">浙江省大学生统计调查方案设计竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">5</td>
+					<td width="177">浙江省大学生服务外包创新应用大赛 </td>
+					<td width="35">15</td>
+					<td width="193">全国大学生物流设计大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">6</td>
+					<td width="177">浙江省大学生程序设计大赛 </td>
+					<td width="35">16</td>
+					<td width="193">第七届浙江省大学生英语演讲比赛 </td>
+				</tr>
+				<tr>
+					<td width="31">7</td>
+					<td width="177">浙江省大学生结构设计竞赛 </td>
+					<td width="35">17</td>
+					<td width="193">全国大学生数学建模竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">8</td>
+					<td width="177">全国大学生周培源力学竞赛 </td>
+					<td width="35">18</td>
+					<td width="193">全国大学生工程训练竞赛（浙江赛区） </td>
+				</tr>
+				<tr>
+					<td width="31">9</td>
+					<td width="177">浙江省大学生化工设计大赛 </td>
+					<td width="35">19</td>
+					<td width="193">浙江省大学生职业生涯规划竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">10</td>
+					<td width="177">浙江省大学生生命科学竞赛 </td>
+					<td width="35" nowrap></td>
+					<td width="193" nowrap></td>
+				</tr>
+				<tr>
+					<td width="33" rowspan="9">B</td>
+					<td width="31">1</td>
+					<td width="177">全国大学生机械创新设计大赛慧鱼组竞赛 </td>
+					<td width="35">10</td>
+					<td width="193">德国&ldquo;iF concept&rdquo;大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">2</td>
+					<td width="177">全国三维数字化创新设计大赛 </td>
+					<td width="35">11</td>
+					<td width="193">中国环境艺术设计学年奖 </td>
+				</tr>
+				<tr>
+					<td width="31">3</td>
+					<td width="177">中国机器人竞赛 </td>
+					<td width="35">12</td>
+					<td width="193">&ldquo;绮丽杯&rdquo;中国时装设计新人奖 </td>
+				</tr>
+				<tr>
+					<td width="31">4</td>
+					<td width="177">全国建筑电气技能大赛 </td>
+					<td width="35">13</td>
+					<td width="193">2012全国大学生英语竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">5</td>
+					<td width="177">中国大学生计算机设计大赛 </td>
+					<td width="35">14</td>
+					<td width="193">浙江省中华经典诗文诵读大赛暨浙江省推广普通话形象大使大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">6</td>
+					<td width="177">全国大学生嵌入式设计大赛 </td>
+					<td width="35">15</td>
+					<td width="193">全国大学生演讲大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">7</td>
+					<td width="177">全国软件专业人才设计与开发大赛 </td>
+					<td width="35">16</td>
+					<td width="193">国际大学生数学建模竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">8</td>
+					<td width="177">浙江省给水排水工程大学生创新大赛 </td>
+					<td width="35">17</td>
+					<td width="193">全国大学生数学竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">9</td>
+					<td width="177">浙江省基础化学知识竞赛 </td>
+					<td width="35">18</td>
+					<td width="193">全国大学生航空航模锦标赛（科研类） </td>
+				</tr>
+				<tr>
+					<td width="33" rowspan="9">C</td>
+					<td width="31">1</td>
+					<td width="177">第六届&ldquo;潍柴动力&rdquo;汽车创新设计大赛 </td>
+					<td width="35">10</td>
+					<td width="193">中国包装&ldquo;创意设计&rdquo;大奖赛 </td>
+				</tr>
+				<tr>
+					<td width="31">2</td>
+					<td width="177">全国电子专业人才设计与技能大赛 </td>
+					<td width="35">11</td>
+					<td width="193">&ldquo;汉帛奖&rdquo;中国国际青年设计师时装作品大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">3</td>
+					<td width="177">全国大学生电子信息类实践创新作品评选 </td>
+					<td width="35">12</td>
+					<td width="193">中国国际游艇模特大赛 </td>
+				</tr>
+				<tr>
+					<td width="31">4</td>
+					<td width="177">全国大学生网络技术大赛 </td>
+					<td width="35">13</td>
+					<td width="193">21世纪杯全国大学生英语演讲比赛 </td>
+				</tr>
+				<tr>
+					<td width="31">5</td>
+					<td width="177">&ldquo;中联杯&rdquo;全国大学生建筑设计竞赛 </td>
+					<td width="35">14</td>
+					<td width="193">浙江省高校英语报刊信息采集与解码竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">6</td>
+					<td width="177">全国城市规划专业课程作业（规划设计、调查报告）评优竞赛 </td>
+					<td width="35">15</td>
+					<td width="193">浙江省大学生高等数学竞赛 </td>
+				</tr>
+				<tr>
+					<td width="31">7</td>
+					<td width="177">包装结构设计大赛 </td>
+					<td width="35">16</td>
+					<td width="193">浙江省大学物理创新竞赛（实验） </td>
+				</tr>
+				<tr>
+					<td width="31">8</td>
+					<td width="177">&ldquo;世界之星&rdquo;包装设计竞赛 </td>
+					<td width="35">17</td>
+					<td width="193">浙江省大学物理创新竞赛（理论） </td>
+				</tr>
+				<tr>
+					<td width="31">9</td>
+					<td width="177">全国第三届印刷行业职业技能大赛 </td>
+					<td width="35">18</td>
+					<td width="193">全国光电设计竞赛 </td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-lg-6">
+			<h3><span>请自行添加</span></h3>
 
 			<p>
 				其中创新创业类分A、B、C三类<br/>
@@ -581,7 +752,16 @@ if ($ifex=0) {//班长提交后变1
 							case "cy":
 								$l=1;
 								break;
+							case "cxlqt":
+								$l=1;
+								break;
 							case "ty":
+								$l=1;
+								break;
+							case "gxyb":
+								$l=1;
+								break;
+							case "gxydh":
 								$l=1;
 								break;
 						}
@@ -598,11 +778,20 @@ if ($ifex=0) {//班长提交后变1
 							case 'c'  :
 								echo '创新创业C类';
 								break;
+							case "cxlqt":
+								echo '创新类其他';
+								break;
 							case 'cy' :
 								echo '才艺';
 								break;
 							case 'ty' :
 								echo '体育';
+								break;
+							case "gxyb":
+								echo '运动会院杯';
+								break;
+							case "gxydh":
+								echo "运动会";
 								break;
 							default:
 								break;
@@ -626,8 +815,11 @@ if ($ifex=0) {//班长提交后变1
 							<option value="a">创新创业A类</option>
 							<option value="b">创新创业B类</option>
 							<option value="c">创新创业C类</option>
+							<option value="cxlqt">创新创业C类</option>
 							<option value="cy">才艺</option>
 							<option value="ty">体育</option>
+							<option value="gxyb">运动会院杯</option>
+							<option value="gxydh">运动会</option>
 						</select>
 					</td>
 					<td>
@@ -638,44 +830,6 @@ if ($ifex=0) {//班长提交后变1
 					</td>
 				</tr>
 			</table>
-			<!--                                                        <h3><span>创新创业类</span></h3>-->
-			<!--                                                        <p><a href="http://jssb.zust.edu.cn/contents.aspx?tableName=5" target="_blank">A类竞赛查询</a>-->
-			<!--                                                            <br />-->
-			<!--                                                            A类（省教育厅质量监控指标范围）竞赛加分标准，B类（教育部各教学指导委员会举办的全国性竞赛）竞赛加分调节系数为相应加分的0.7，C类（省级各教学指导委员会、全国性行业学会、协会举办的竞赛）竞赛加分调节系数为相应加分的0.5-->
-			<!--                                                        </p>-->
-			<!--                                                        <p>请同学参照细则计算分数并且附上备注</p>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>创新创业类总分</label>-->
-			<!--                                                            <input class="form-control" id="exampleInputFile" type="text" placeholder="填写总分" >-->
-			<!--                                                        </div>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>创新创业类备注栏</label>-->
-			<!--                                                            <textarea class="form-control" rows="3"  placeholder="一行一条，格式：某某项目 +1分"></textarea>-->
-			<!--                                                        </div>-->
-		</div>
-		<div class="col-lg-6">
-			<!--                                                        <h3><span>才艺类</span></h3>-->
-			<!--                                                        <p>请同学参照细则计算分数并且附上备注</p>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>才艺类总分</label>-->
-			<!--                                                            <input class="form-control" id="exampleInputFile" type="text" placeholder="填写总分" >-->
-			<!--                                                        </div>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>才艺类备注栏</label>-->
-			<!--                                                            <textarea class="form-control" rows="3"  placeholder="一行一条，格式：某某项目 +1分"></textarea>-->
-			<!--                                                        </div>-->
-			<!--                                                        <h3><span>其他</span></h3>-->
-			<!--                                                        <p>请同学参照细则计算分数并且附上备注</p>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>总分</label>-->
-			<!--                                                            <input class="form-control" id="exampleInputFile" type="text" placeholder="填写总分" >-->
-			<!--                                                        </div>-->
-			<!--                                                        <div class="form-group">-->
-			<!--                                                            <label>备注栏</label>-->
-			<!--                                                            <textarea class="form-control" rows="3"  placeholder="一行一条，格式：某某项目 +1分"></textarea>-->
-			<!--                                                        </div>-->
-
-
 		</div>
 	</div>
 	<div class="row">
@@ -771,8 +925,11 @@ if ($ifex=0) {//班长提交后变1
 					'<option value="a">创新创业A类</option>'+
 					'<option value="b">创新创业B类</option>'+
 					'<option value="c">创新创业C类</option>'+
+					'<option value="cxlqt">创新创业C类</option>'+
 					'<option value="cy">才艺</option>'+
 					'<option value="ty">体育</option>'+
+					'<option value="gxyb">运动会院杯</option>'+
+					'<option value="gxydh">运动会</option>'+
 					'</select> </td>' +
 					'<td> <input class="form-control" type="text" name="gx[' + FieldCount + '][sorce]" placeholder="(无需乘系数)" > </td> ' +
 					'<td> <a href="#" class="removeclass">×</a> </td> </tr>';

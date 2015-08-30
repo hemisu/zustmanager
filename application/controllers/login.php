@@ -116,11 +116,14 @@ class Login extends CI_Controller
 
 
 
-//    public function error($note = null){//错误提示
-//        $data['error'][] = "$note";
-//        $this->load->view('part/error',$data);
-//
-//    }
+    public function error($note = null){//错误提示
+        $data['error'][] = "$note";
+	    if($note == 'register'){
+		    $data['error'][] = "注册已关闭";
+	    }
+        $this->load->view('part/error',$data);
+
+    }
 //    public function success($note = null){//错误提示
 //        $data['success'][] = "$note";
 //        header("refresh:2;url=$current_url");

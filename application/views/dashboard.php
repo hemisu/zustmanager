@@ -1176,3 +1176,32 @@ $(document).ready(function () {
 </script>
 </body>
 </html>
+
+
+<h3><span>二级学院所组织的项目</span></h3>
+<div class="form-group">
+	<label>运动会院杯 （三等奖 0.5 二等奖1 一等奖2）</label>
+	<input class="form-control" name="gx[gxyb]" type="text" value="<?echo $zcmasterinfo->gxyb;?>">
+</div>
+<div class="form-group">
+	<label>运动会 （三等奖 0.5 二等奖1 一等奖2）</label>
+	<input class="form-control" name="gx[gxydh]" type="text" value="<?echo $zcmasterinfo->gxydh;?>">
+</div>
+<div class="form-group">
+	<label>运动会院杯</label>
+	<select class="form-control" name="gx[gxyb]">
+		<option value="0" <?if($zcmasterinfo->gxyb== 0){echo 'selected';}?>>点击选择</option>
+		<option value="0.5" <?if($zcmasterinfo->gxyb== 0.5){echo 'selected';}?>>三等奖 0.5</option>
+		<option value="1" <?if($zcmasterinfo->gxyb== 1){echo 'selected';}?>>二等奖 1</option>
+		<option value="2" <?if($zcmasterinfo->gxyb== 2){echo 'selected';}?>>一等奖 2</option>
+	</select>
+</div>
+<div class="form-group">
+	<label>运动会</label>
+	<select class="form-control" name="gx[gxydh]">
+		<option value="0" <?if($zcmasterinfo->gxydh== 0){echo 'selected';}?>>点击选择</option>
+		<option value="0.5" <?if($zcmasterinfo->gxydh== 0.5){echo 'selected';}?>>三等奖 0.5</option>
+		<option value="1" <?if($zcmasterinfo->gxydh== 1){echo 'selected';}?>>二等奖 1</option>
+		<option value="2" <?if($zcmasterinfo->gxydh== 2){echo 'selected';}?>>一等奖 2</option>
+	</select>
+</div>

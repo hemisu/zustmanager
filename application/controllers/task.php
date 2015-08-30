@@ -86,6 +86,28 @@ class Task extends CI_Controller
 
 	}
 
+	/**
+	 * 综测总数据表格
+	 * 管理员和班长查看？还是条件选择？
+	 */
+	public function tlist()
+	{
+
+		$id = $this->session->userdata('student_id');
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
+			redirect(base_url('login'));
+		}
+		$major = $this->session->userdata('major');//电气
+		$classnum = $this->session->userdata('classnum');//134
+//		where('major', $major)->where('classnum', $classnum)->
+		$data['userinfo'] = $this->User_data->userinfo($id);
+
+		$data['zclist'] = $this->db->select('*')->from('zc')->get()->result();
+
+		$this->load->view('task_zc_list', $data);
+
+	}
+
 	public function post()
 	{
 		if ($this->User_data->is_login() == False) {
@@ -118,38 +140,6 @@ class Task extends CI_Controller
 
 		if($data['nl']['xsbg']>=0.6){$data['nl']['xsbg']=0.6;}//学术报告最多3场
 
-		$gxsum = 0;//个性总分初始化
-		foreach ($data['gx'] as $key => $val) {
-			if (is_array($val)) {
-				switch($val['lb']){
-					case "a":
-						$val['lb']=1;
-						break;
-					case "b":
-						$val['lb']=0.7;
-						break;
-					case "c":
-						$val['lb']=0.5;
-						break;
-					case "cy":
-						$val['lb']=1;
-						break;
-					case "ty":
-						$val['lb']=1;
-						break;
-				}
-				$gxsum += $val['sorce'] * $val['lb'];
-			}
-		}
-		$gxsum += $data['gx']['gxyb'];//个性栏 院杯
-		$gxsum += $data['gx']['gxydh'];//个性栏 运动会
-		if ($gxsum >= 40) {
-			$gxsum = 40;
-		}//防止德育分溢出
-		$data['gxsum'] = $gxsum;//德育总分输出
-
-
-
 		//数据库操作开始
 		$zcPostDb = $data['deyu'];
 		$zcPostDb['student_id']=$id;
@@ -161,13 +151,12 @@ class Task extends CI_Controller
 			//能力插入
 			$zcPostDb["$key"] = $val;
 		}
-		$zcPostDb['gxyb']=$data['gx']['gxyb'];
-		$zcPostDb['gxydh']=$data['gx']['gxydh'];
-		unset($zcPostDb['xfbtzb']);
-		$this->db->where('student_id', $id);
+		unset($zcPostDb['xfbtzb']);//去除优良学风班、先进团支部 由班长填写加入
 
+		$this->db->where('student_id', $id);
 		$query=$this->db->select('student_id')->from('zc')->where('student_id', $id);
-		$zcex = $query->get()->num_rows();
+		$zcex = $query->get()->num_rows();//对该学生记录查询
+
 		if($zcex){//如果该学生存在记录
 			$this->db->where('student_id', $id);
 			$this->db->update('zc', $zcPostDb);
@@ -182,12 +171,62 @@ class Task extends CI_Controller
 					$val['student_id'] = $id;
 					$val['username'] = $username;
 					$this->db->insert('zc_gx', $val);
-//					echo 'ok';
 				}
 			}
 		}
-//		echo "<pre>";
-//		print_r($data['gx']);
+
+		$data['zcgx'] = $this->db->select('*')->from('zc_gx')->where('student_id', $id)->get()->result();
+		//获取该学生个性数据
+		$gxsum = 0;//个性总分初始化
+		$cxlsum= 0;//创新类
+		$cylsum= 0;//才艺类
+		foreach($data['zcgx'] as $val){
+			switch($val->lb){
+				case "a":
+					$l=1;
+					$cxlsum +=$val->sorce * $l;//创新类分类加分
+					break;
+				case "b":
+					$l=0.7;
+					$cxlsum +=$val->sorce * $l;//创新类分类加分
+					break;
+				case "c":
+					$l=0.5;
+					$cxlsum +=$val->sorce * $l;//创新类分类加分
+					break;
+				case "cxlqt":
+					$l=1;
+					$cxlsum +=$val->sorce * $l;//创新类分类加分
+					break;
+				case "cy":
+					$l=1;
+					$cylsum +=$val->sorce * $l;//才艺类分类加分
+					break;
+				case "ty":
+					$l=1;
+					$cylsum +=$val->sorce * $l;//才艺类分类加分
+					break;
+				case "gxyb":
+					$l=1;
+					$cylsum +=$val->sorce * $l;//才艺类分类加分
+					break;
+				case "gxydh":
+					$l=1;
+					$cylsum +=$val->sorce * $l;//才艺类分类加分
+					break;
+			}
+			$gxsum += $val->sorce * $l;
+		}
+		if ($gxsum >= 40) {
+			$gxsum = 40;
+		}//防止个性分溢出
+		$data['gxsum'] = $gxsum;//个性总分输出
+
+		$gxfdata = array(
+			'cxlsum' => $cxlsum,
+			'cylsum' => $cylsum,
+		);
+		$this->db->where('student_id', $id)->update('zc', $gxfdata);//输入个性分
 
 		$this->load->view('task_zc_status', $data);
 	}
@@ -219,7 +258,7 @@ class Task extends CI_Controller
 		$major = $this->session->userdata('major');//电气
 		$classnum = $this->session->userdata('classnum');//134
 
-		echo "<pre>";
+//		echo "<pre>";
 //        print_r($zcmaster);
 		foreach($zcmaster as $key=>$val){
 			$query=$this->db->select('student_id')->from('zc')->where('student_id', $zcmaster["$key"]['student_id']);
@@ -231,7 +270,8 @@ class Task extends CI_Controller
 				$this->db->insert('zc', $val);
 			}
 		}
-		echo "更新".count($zcmaster)."位同学数据";
+		$sucinfo['success'][] = "更新".count($zcmaster)."位同学数据";
+		$this->load->view('part/success', $sucinfo);
 //		$this->db->trans_start();
 //		if ($ifex) {
 //			$this->db->update_batch('zc', $zcmaster, 'student_id');
@@ -251,8 +291,8 @@ class Task extends CI_Controller
 
 		}
 
-		$current_url = $this->input->post('current_url');
-		echo "<br /><a href='" . $current_url . "'>返回</a>";
+//		$current_url = $this->input->post('current_url');
+//		echo "<br /><a href='" . $current_url . "'>返回</a>";
 	}
 
 }

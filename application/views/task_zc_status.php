@@ -151,6 +151,7 @@
 				break;
 			case "dybeizhu"   :
 				$key = '德育项目备注';
+				if(empty($val)){break;}
 				$val = explode("\n", $val);
 				break;
 			default:
@@ -253,94 +254,73 @@
 	</div>
 </li>
 <ol class="dd-list">
+	<?foreach($zcgx as $val){?>
 	<li class="dd-item">
-		<div class="dd-handle">
-			运动会院杯
-			<div class="nested-links">
-				<span class="badge"><? echo $gx['gxyb']; ?></span>
-			</div>
+	<div class="dd-handle">
+		<?=$val->xmname;?>(<?
+		switch($val->lb) {
+			case 'a'    :
+				echo '创新创业A类';
+				break;
+			case 'b'  :
+				echo '创新创业B类';
+				break;
+			case 'c'  :
+				echo '创新创业C类';
+				break;
+			case 'cxlqt'  :
+				echo '创新创业其他';
+				break;
+			case 'cy' :
+				echo '才艺';
+				break;
+			case 'ty' :
+				echo '体育';
+				break;
+			case "gxyb":
+				echo '运动会院杯';
+				break;
+			case "gxydh":
+				echo "运动会";
+				break;
+			default:
+				break;
+		}?>)
+		<div class="nested-links">
+      <span
+        class="badge"><?
+        switch($val->lb){
+          case "a":
+            $l=1;
+            break;
+          case "b":
+            $l=0.7;
+            break;
+          case "c":
+            $l=0.5;
+            break;
+	        case "cxlqt":
+		        $l=1;
+		        break;
+          case "cy":
+            $l=1;
+            break;
+          case "ty":
+            $l=1;
+            break;
+          case "gxyb":
+            $l=1;
+            break;
+          case "gxydh":
+            $l=1;
+            break;
+        }
+        echo $s=$val->sorce."\t*\t".$l;
+        echo "\t=".$s*$l;?></span>
 		</div>
+	</div>
 	</li>
-	<li class="dd-item">
-		<div class="dd-handle">
-			运动会
-			<div class="nested-links">
-				<span class="badge"><? echo $gx['gxydh']; ?></span>
-			</div>
-		</div>
-	</li>
-	<?
-	foreach ($gx as $key => $val) {
-		?>
-
-		<?
-		if (is_array($val)) {
-			if ($val['xmname']) {
-				?>
-				<li class="dd-item">
-					<div class="dd-handle">
-						<? echo $val['xmname']; ?>
-						<div class="nested-links">
-              <span
-                class="badge"><? echo $val['sorce'] ; ?></span>
-						</div>
-					</div>
-				</li>
-				<ol class="dd-list">
-					<li class="dd-item">
-						<div class="dd-handle">
-							类别（<?
-							switch ($val['lb']) {
-								case 'a'    :
-									echo '创新创业A类';
-									break;
-								case 'b'  :
-									echo '创新创业B类';
-									break;
-								case 'c'  :
-									echo '创新创业C类';
-									break;
-								case 'cy' :
-									echo '才艺';
-									break;
-								case 'ty' :
-									echo '体育';
-									break;
-								default:
-									break;
-							}
-							?>）
-							<div class="nested-links">
-                <span
-                  class="badge"><? switch ($val['lb']) {
-		                case "a":
-			                $val['lb'] = 1;
-			                break;
-		                case "b":
-			                $val['lb'] = 0.7;
-			                break;
-		                case "c":
-			                $val['lb'] = 0.5;
-			                break;
-		                case "cy":
-			                $val['lb'] = 1;
-			                break;
-		                case "ty":
-			                $val['lb'] = 1;
-			                break;
-	                }
-	                echo $val['sorce'] . '*' . $val['lb'].'='.$val['sorce']*$val['lb'];
-	                 ?></span>
-							</div>
-						</div>
-					</li>
-				</ol>
-			<?
-			}
-		}
-
-	}
-	?>
+	<?}?>
 </ol>
 </ol>
 </div>
@@ -352,7 +332,7 @@
 				能力总分
 				<div class="nested-links">
           <span class="badge"><?
-            $nlsum = array_sum($nl);
+            $nlsum = array_sum($nl)+6;//基础能力分+6
             if ($nlsum > 15) {
               echo $nlsum = 15;;
             } else {
@@ -362,6 +342,14 @@
 			</div>
 		</li>
 		<ol class="dd-list">
+			<li class="dd-item">
+				<div class="dd-handle">
+					基础能力分
+					<div class="nested-links">
+							<span class="badge">6</span>
+					</div>
+				</div>
+			</li>
 			<?
 			foreach ($nl as $key => $val) {
 				switch ($key) {
@@ -413,6 +401,12 @@
 					case "shsj"     :
 						$key = "参加社会实践";
 						break;
+					case "cjkfxsy"     :
+						$key = "参加开放性试验";
+						break;
+					case "csfm"     :
+						$key = "尝试发明";
+						break;
 					case "hjjn"     :
 						$key = "焊接技能比赛";
 						break;
@@ -424,9 +418,6 @@
 						break;
 					case "zzjs"     :
 						$key = "积极参加校组织及以上的各项竞赛但未获奖";
-						break;
-					case "bhbs"     :
-						$key = "电气学院举行的拔河比赛";
 						break;
 					case "ydy"      :
 						$key = "运动月";
@@ -463,6 +454,7 @@
 						break;
 					case "nlbeizhu"   :
 						$key = '能力项目备注';
+						if(empty($val)){break;}
 						$val = explode("\n", $val);
 						break;
 					default:

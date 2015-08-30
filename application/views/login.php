@@ -108,7 +108,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							没有账号？
-							<a href="registration.html">
+							<a href="<?=base_url('login/error/register')?>">
 								注册
 							</a>
 						</div>
