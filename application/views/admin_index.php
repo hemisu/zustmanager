@@ -60,7 +60,10 @@
 								<h2>管理</h2>
 							</header>
 							<div class="main-box-body clearfix">
-								<a href="<?=base_url('admin/log')?>">日志</a>
+								<ul>
+									<li><a href="<?=base_url('admin/log')?>">操作日志</a></li>
+									<li><a href="<?=base_url('admin/backschool')?>">返校统计</a></li>
+								</ul>
 							</div>
 						</div>
 					</div>

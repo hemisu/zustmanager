@@ -12,7 +12,7 @@
 	<meta charset="UTF-8"/>
 	<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" name="viewport">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<title>操作日志 - 学生管理系统</title>
+	<title>返校统计管理 - 学生管理系统</title>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
 
@@ -62,7 +62,7 @@
 							<ol class="breadcrumb">
 								<li><a href="#">主页</a></li>
 								<li><a href="<? echo base_url('admin') ?>">管理</a></li>
-								<li class="active"><span>后台日志</span></li>
+								<li class="active"><span>返校统计管理</span></li>
 							</ol>
 						</div>
 					</div>
@@ -71,43 +71,77 @@
 					<div class="col-lg-6">
 						<div class="main-box clearfix">
 							<header class="main-box-header clearfix">
-								<h2>操作日志</h2>
+								<h2>返校统计</h2>
 							</header>
 							<div class="main-box-body clearfix">
-								<table class="table table-condensed table-hover">
-								<?foreach($adminlog as $row){?>
-									<tr>
-										<td><?=$row->username;?></td>
-										<td><?=$row->events;?></td>
-										<td><?=$this->User_data->time_tran($row->time);?></td>
-									</tr>
-								<?}?>
-								</table>
+							<?
+							$query = $this->db->query('SELECT major,classnum, COUNT(*) FROM user GROUP BY major,classnum;');
+							$arr = $query->result();
+							$query = $this->db->query('SELECT major,classnum,status, COUNT(*) FROM backschool GROUP BY major,classnum,status;');
+							$arr1 = $query->result();
+//							echo "<pre>";
+//							print_r($arr);
+//							print_r($arr1);
+//							echo "</pre>";
+							?>
+							<table class="table table-condensed table-hover">
+								<tr>
+									<td rowspan="2" width="81">专业班级</td>
+									<td rowspan="2" width="81">应到人数(1)</td>
+									<td rowspan="2" width="96">已到人数(2)</td>
+									<td colspan="3" width="304">未到人数</td>
+								</tr>
+								<tr>
+									<td width="85">途中人数(3)</td>
+									<td width="131">未联系上的人数(4)</td>
+									<td width="88">请假人数(5)</td>
+								</tr>
 								<?
-								$config['base_url'] = base_url('admin/log');
-								$config['total_rows'] = $this->db->from('log')->get()->num_rows();
-								$config['per_page'] = 20;
-								$config['use_page_numbers'] = TRUE;
-								$config['full_tag_open'] = '<div class="main-box-body clearfix">
-																							<ul class="pagination">';
-								$config['full_tag_close'] = '</div>';
-								$config['num_tag_open'] = '<li>';
-								$config['num_tag_close'] = '</li>';
-								$config['cur_tag_open'] = '<li class="active"><a href="#">';
-								$config['cur_tag_close'] = '</a></li>';
-								$config['prev_tag_open'] = '<li>';//上一页
-								$config['prev_tag_close'] = '</li>';
-								$config['next_tag_open'] = '<li>';//下一页
-								$config['next_tag_close'] = '</li>';
-								$config['last_tag_open'] = '<li>';//最后一页
-								$config['last_tag_close'] = '</li>';
-								$config['first_tag_open'] = '<li>';//第一页
-								$config['first_tag_close'] = '</li>';
-								$this->pagination->initialize($config);
-
-								echo $this->pagination->create_links();
+								foreach($arr as $val){
+									$tz = $wlxs =$qj = 0;
 								?>
+								<tr>
+									<td><?=$val->major.$val->classnum;?></td>
+									<td><?=$val->{'COUNT(*)'};?></td>
+									<?
+									foreach($arr1 as $v){
 
+										if($v->major == $val->major && $v->classnum == $val->classnum){
+
+											if($v->status=="途中"){
+												$tz = $v->{'COUNT(*)'};//途中
+											}
+											if($v->status=="未联系上"){
+												$wlxs = $v->{'COUNT(*)'};//途中
+											}
+											if($v->status=="请假"){
+												$qj = $v->{'COUNT(*)'};//途中
+											}
+										}
+										$val->arrive = $val->{'COUNT(*)'} - $tz -$wlxs -$qj;
+									}
+									?>
+									<td>
+										<?=$val->arrive; ?>
+									</td>
+									<td>
+										<?=$tz; ?>
+									</td>
+									<td>
+										<?=$wlxs; ?>
+									</td>
+									<td>
+										<?=$qj; ?>
+									</td>
+
+								</tr>
+									<?
+								}
+								?>
+								<tr>
+
+								</tr>
+							</table>
 							</div>
 						</div>
 					</div>

@@ -302,19 +302,17 @@ class Task extends CI_Controller
 			$query=$this->db->select('student_id')->from('backschool')->where('student_id', $backschool["$key"]['student_id']);
 			$num = $query->get()->num_rows();
 			if($num){//如果该学生存在记录
-				echo 'cunzai';
 				$this->db->where('student_id', $backschool["$key"]['student_id']);
 				$this->db->update('backschool', $val);
-				redirect(base_url('task/backschool'));
 //				$sucinfo['success'][] = "更新".count($backschool)."位同学数据";
 //				$this->load->view('part/success', $sucinfo);
 			}else{
 				$this->db->insert('backschool', $val);
-				redirect(base_url('task/backschool'));
 //				$sucinfo['success'][] = "添加".count($backschool)."位同学数据";
 //				$this->load->view('part/success', $sucinfo);
 			}
 		}
+		redirect(base_url('task/backschool'));
 //		echo '<pre>';
 //		print_r($backschool);
 	}

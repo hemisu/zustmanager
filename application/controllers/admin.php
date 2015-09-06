@@ -36,6 +36,23 @@ class Admin extends CI_Controller
 
 		$this->load->view('admin_log', $data);
 	}
+	public function backschool()
+	{
+		$id = $this->session->userdata('student_id');
+		$this->load->library('pagination');
+		$this->load->model('User_data'); //Load user data model
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 50)) {
+			redirect(base_url('login'));
+		}
+
+		$this->load->view('admin_backschool');
+
+
+//		$this->db->select('major,classnum')->distinct('classnum')->group_by(array("major", "classnum")); ;
+//		$query=$this->db->get('user');
+//		$arr = $query->result();
+
+	}
 
 
 }

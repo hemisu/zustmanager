@@ -107,10 +107,11 @@
 				<div id="login-box-footer">
 					<div class="row">
 						<div class="col-xs-12">
-							没有账号？
-							<a href="<?=base_url('login/error/register')?>">
+							没有账号？<a href="<?=base_url('login/error/register')?>">
 								注册
 							</a>
+							<br />
+
 						</div>
 					</div>
 				</div>
