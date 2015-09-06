@@ -153,7 +153,7 @@
 						</ul>
 				</div>-->
 			<div class="profile-message-btn center-block text-center">
-				<a href="#mydata" class="btn btn-success">
+				<a data-toggle="modal" href="#mydata" class="btn btn-success">
 					<i class="fa fa-cog"></i>
 					修改资料
 				</a>
@@ -178,8 +178,9 @@
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in">
 					<div class="panel-body">
-						<p>点击左侧头像即可修改 请大家尽快修改自己的登陆密码
-							<br/><strong style="font-size: 20px;">邮箱和QQ请到右上角 修改资料处修改</strong></p>
+						<p>点击头像修改自己的自定义头像<br />
+							请大家尽快修改自己的密码（请随意设置，记住就好）<br />
+						</p>
 
 					</div>
 				</div>
@@ -194,7 +195,7 @@
 				</div>
 				<div id="collapseTwo" class="panel-collapse collapse">
 					<div class="panel-body">
-						公告2内容
+						公告2内容（功能添加中）
 					</div>
 				</div>
 			</div>
@@ -257,14 +258,39 @@
 										2015年7月5日
 									</td>
 									<td class="text-center">
-										<span class="label label-success">Completed</span>
+										<span class="label label-success">已完成</span>
 									</td>
 									<td class="text-center" style="width: 15%;">
 										<a href="#" class="table-link">
-                                                        <span class="fa-stack">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                        </span>
+                      <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href="<? echo base_url("task/backschool") ?>">2015秋季返校统计</a>
+									</td>
+									<td>
+										提交13级返校情况
+									</td>
+									<td>
+										2015年9月5日
+									</td>
+									<td>
+										2015年9月6日
+									</td>
+									<td class="text-center">
+										<span class="label label-danger">正在进行</span>
+									</td>
+									<td class="text-center" style="width: 15%;">
+										<a href="<? echo base_url("task/backschool") ?>" class="table-link">
+                      <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                      </span>
 										</a>
 									</td>
 								</tr>
@@ -282,14 +308,14 @@
 										2015年9月20日
 									</td>
 									<td class="text-center">
-										<span class="label label-warning">On hold</span>
+										<span class="label label-warning">即将开始</span>
 									</td>
 									<td class="text-center" style="width: 15%;">
 										<a href="<? echo base_url("task/zc") ?>" class="table-link">
-                                                    <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                    </span>
+                      <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                      </span>
 										</a>
 									</td>
 								</tr>

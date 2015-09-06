@@ -48,6 +48,7 @@ class Task extends CI_Controller
 					//获取数据
 					$data['zcmasterinfo'] = $this->db->select('*')->from('zc')->where('student_id', $id)->get()->row();
 				}else{
+					//无数据则插入一条空白row
 					$studata= array(
 						'student_id'=>$id,
 						'username'=>$username,
@@ -55,6 +56,7 @@ class Task extends CI_Controller
 						'classnum'=>$classnum,
 					);
 					if($this->db->insert('zc', $studata)) {
+						//插入信息成功后，获取数据
 						$data['zcmasterinfo'] = $this->db->select('*')->from('zc')->where('student_id', $id)->get()->row();
 					}
 				};
@@ -69,9 +71,31 @@ class Task extends CI_Controller
 		}
 	}
 
+	/**
+	 * 返校统计班长提交
+	 */
+	public function backschool(){
+		$id = $this->session->userdata('student_id');
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
+			redirect(base_url('login'));
+		}
+		$major = $this->session->userdata('major');//电气
+		$classnum = $this->session->userdata('classnum');//134
+
+		$data['userinfo'] = $this->User_data->userinfo($id);
+		$data['allnum'] = $this->db->select('student_id,major,classnum')->from('user')->where('major', $major)->where('classnum', $classnum)->get()->num_rows();
+		$data['tuzhong'] = $this->db->select('*')->from('backschool')->where('status', '途中')->where('major', $major)->where('classnum', $classnum)->get()->num_rows();
+		$data['weilianxishang'] = $this->db->select('*')->from('backschool')->where('status', '未联系上')->where('major', $major)->where('classnum', $classnum)->get()->num_rows();
+		$data['qingjia'] = $this->db->select('*')->from('backschool')->where('status', '请假')->where('major', $major)->where('classnum', $classnum)->get()->num_rows();
+		$data['backinfo'] = $this->db->select('*')->from('backschool')->where('major', $major)->where('classnum', $classnum)->get()->result();
+		$this->load->view('task_zc_backschool', $data);
+	}
+
+	/**
+	 * 综合测评 班长提交学生信息
+	 */
 	public function master()
 	{
-
 		$id = $this->session->userdata('student_id');
 		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
 			redirect(base_url('login'));
@@ -228,27 +252,96 @@ class Task extends CI_Controller
 		);
 		$this->db->where('student_id', $id)->update('zc', $gxfdata);//输入个性分
 
+		$log = array(
+			'student_id' => $this->session->userdata('student_id'),
+			'username' => $this->session->userdata('username'),
+			'events' => "提交综合测评数据",
+			'time' => date("Y-m-d H:i:s")
+		);
+		$this->db->insert('log', $log);//记录事件 登出
+
 		$this->load->view('task_zc_status', $data);
 	}
 
+	/**
+	 * @param null $gxid 个性中的ID
+	 * 删除综测中个性项目
+	 */
 	public function gxdel($gxid =null)
 	{
 		if ($this->User_data->is_login() == False) {
 			redirect(base_url('login'));
 		}
-		$id = $this->session->userdata('student_id');
 		$this->db->where('id', $gxid);
 		if($this->db->delete('zc_gx')){
-			redirect(base_url('task'));
+			redirect(base_url('task/zc/1'));
 		}
 	}
 
-
-	public function postmaster()
-	{
-		if ($this->User_data->is_login() == False) {
+	/**
+	 * 返校统计提交
+	 */
+	public function postbackschool(){
+		$id = $this->session->userdata('student_id');
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
 			redirect(base_url('login'));
 		}
+		$backschool = $this->input->post('backschool');
+		$log = array(
+			'student_id' => $this->session->userdata('student_id'),
+			'username' => $this->session->userdata('username'),
+			'events' => '提交返校信息',
+			'time' => date("Y-m-d H:i:s")
+		);
+		$this->db->insert('log', $log);//记录事件
+		foreach($backschool as $key=>$val){
+			$query=$this->db->select('student_id,username')->from('user')->where('student_id', $backschool["$key"]['student_id'])->limit(1)->get();
+			$row = $query->first_row('object');
+			$val['username']=$row->username;
+
+			$query=$this->db->select('student_id')->from('backschool')->where('student_id', $backschool["$key"]['student_id']);
+			$num = $query->get()->num_rows();
+			if($num){//如果该学生存在记录
+				echo 'cunzai';
+				$this->db->where('student_id', $backschool["$key"]['student_id']);
+				$this->db->update('backschool', $val);
+				redirect(base_url('task/backschool'));
+//				$sucinfo['success'][] = "更新".count($backschool)."位同学数据";
+//				$this->load->view('part/success', $sucinfo);
+			}else{
+				$this->db->insert('backschool', $val);
+				redirect(base_url('task/backschool'));
+//				$sucinfo['success'][] = "添加".count($backschool)."位同学数据";
+//				$this->load->view('part/success', $sucinfo);
+			}
+		}
+//		echo '<pre>';
+//		print_r($backschool);
+	}
+
+	public function backschooldel($bid)
+	{
+		$id = $this->session->userdata('student_id');
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
+			redirect(base_url('login'));
+		}
+		$this->db->where('student_id', $bid);
+		if($this->db->delete('backschool')){
+			$log = array(
+				'student_id' => $this->session->userdata('student_id'),
+				'username' => $this->session->userdata('username'),
+				'events' => "删除".$bid."的返校信息",
+				'time' => date("Y-m-d H:i:s")
+			);
+			$this->db->insert('log', $log);//记录事件 登出
+			redirect(base_url('task/backschool'));
+		}
+	}
+	/**
+	 * 班长提交综测信息
+	 */
+	public function postmaster()
+	{
 		$id = $this->session->userdata('student_id');
 		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
 			redirect(base_url('login'));
@@ -282,123 +375,21 @@ class Task extends CI_Controller
 //			echo "数据插入成功";
 //		}
 //		$this->db->trans_complete();
-
-
 		$ry = $this->input->post('ry');
 //		print_r($ry);
 		if ($ry) {
 			$this->db->where('major', $major)->where('classnum', $classnum)->update('zc', $ry);//更新班级荣誉
 
 		}
-
+		$log = array(
+			'student_id' => $this->session->userdata('student_id'),
+			'username' => $this->session->userdata('username'),
+			'events' => '班长提交班级综测信息',
+			'time' => date("Y-m-d H:i:s")
+		);
+		$this->db->insert('log', $log);//记录事件 登出
 //		$current_url = $this->input->post('current_url');
 //		echo "<br /><a href='" . $current_url . "'>返回</a>";
 	}
 
 }
-//        $deyu = $this->input->post('deyu');
-//        echo "<pre>";
-//        print_r($deyu);
-//        echo "<table border='1'>";
-//
-//        foreach($deyu as $key=>$val){
-//            switch($key){
-//                case "ztyxf"    :   $key='总体印象分';break;
-//                case "xfbtzb"   :   $key='优良学风班、先进团支部';break;
-//                case "yxqs"     :   $key='优秀寝室';break;
-//                case "qtxjxjjt" :   $key='其他校级先进集体';break;
-//                case "tbby"     :   $key='通报表扬';break;
-//                case "zgdb"     :   $key='撰稿登播';break;
-//                case "wxtchlwjy":   $key='为校（院）提出合理化建议';break;
-//                case "ejxyqdjf" :   $key='二级学院确定的加分';break;
-//                case "xssc90"   :   $key='学生手册考查90分以上';break;
-//                case "zyzdx"    :   $key='青协星级志愿者，党校优秀学员';break;
-//                case "yjtbby"   :   $key='院级通报表扬';break;
-//                case "yjyxtzb"  :   $key='院级优秀团支部';break;
-//                case "xx"       :   $key='献血';break;
-//                case "pwjns"    :   $key='排舞吉尼斯';break;
-//                case "wsyx"     :   $key='参加五四毅行';break;
-//                case "ktxwgf"   :   $key='课堂行为规范';break;
-//                case "ssjf"     :   $key='宿舍减分';break;
-//                case "bwmxwsj"  :   $key='不文明行为纪实';break;
-//                case "wjcf"     :   $key='违纪处分';break;
-//                case "rjxyqdjf" :   $key='二级学院确定的减分';break;
-//                case "xsgbkhbhg":   $key='学生干部考核不合格';break;
-//                case "sxxcxy70" :   $key='《学生手册》内容考查70分以下或不参加考查';break;
-//                case "bcjsqsqshhd": $key='不参加暑期社会实践活动';break;
-//                case "wgbasjf"  :   $key='无故不按时缴付学杂费或办理相关手续';break;
-//                case "beizhu"   :   $key='德育项目备注';
-//                                    $val= str_replace("\n","<br />",$val);
-//                                    break;
-//                default:break;
-//            }
-//            if(!$val){$val="未填";}
-//            echo "<tr><td>".$key."</td><td>".$val."</td></tr>";
-//        }
-//
-//        $xy = $this->input->post('xy');
-//        foreach($xy as $key=>$val){
-//            if(!$val){$val="未填";}
-//            switch($key){
-//                case "all"      :   $key="学业总成绩";break;
-//                case "sports"   :   $key="体测分数";break;
-//                case "hadcredit":   $key="已获得学分";break;
-//                case "average"  :   $key="学业加权平均分";break;
-//                default:break;
-//            }
-//            echo "<tr><td>".$key."</td><td>".$val."</td></tr>";
-//        }
-//
-//        $nl = $this->input->post('nl');
-//        print_r($nl);
-//        foreach($nl as $key=>$val){
-//            if(!$val){$val="未填";}
-//            switch($key){
-//                case "zypm"     :   $key="课程学习成绩在专业排名情况";break;
-//                case "fxk"      :   $key="辅修课";break;
-//                case "zysy"     :   $key="参加并递交职业生涯规划大赛文本";break;
-//                case "xsbg"     :   $key="听学术讲座报告";break;
-//                case "zs"       :   $key="考证情况";break;
-//                case "english"  :   $key="英语四六级";break;
-//                case "enky"     :   $key="英语中级口译";break;
-//                case "computer" :   $key="计算机二、三级";break;
-//                case "z1"       :   $key="院学生会主席团成员及班长、团支书";break;
-//                case "z8"       :   $key="院分团委委员、院学生会正部长、副部长";break;
-//                case "z5"       :   $key="担任一年级的助班或导读";break;
-//                case "z3"       :   $key="校、院系学生会、团委干事、班委；";break;
-//                case "shsj"     :   $key="参加社会实践";break;
-//                case "hjjn"     :   $key="焊接技能比赛";break;
-//                case "wxdcx"    :   $key="无线电测向运动";break;
-//                case "tzb"      :   $key="参加“挑战杯”项目的申报、新苗计划、春萌计划等";break;
-//                case "zzjs"     :   $key="积极参加校组织及以上的各项竞赛但未获奖";break;
-//                case "bhbs"     :   $key="电气学院举行的拔河比赛";break;
-//                case "ydy"      :   $key="运动月";break;
-//                case "hyjt"     :   $key="参加弘毅讲堂";break;
-//                case "ydh"      :   $key="参加运动会项目";break;
-//                case "5000"     :   $key="运动会5000米跑完全程";break;
-//                case "1500"     :   $key="运动会女子1500米跑完全程";break;
-//                case "fzgbc"    :   $key="运动会方阵、广播操";break;
-//                case "ydhfzr"   :   $key="运动会负责人及其工作人员";break;
-//                case "sjqs"     :   $key="院十佳寝室";break;
-//                case "fzr"      :   $key="学院大型活动负责人";break;
-//                case "wmqs"     :   $key="文明寝室";break;
-//                case "wmqsry"   :   $key="进行文明寝室建设的人员";break;
-//                case "beizhu"   :   $key='能力项目备注';
-//                                    $val= str_replace("\n","<br />",$val);
-//                                    break;
-//                default:break;
-//            }
-//            echo "<tr><td>".$key."</td><td>".$val."</td></tr>";
-//        }
-//
-//        $gx = $this->input->post('gx');
-//        print_r($gx);
-//        foreach($gx as $key=>$val) {
-//            if (is_array($val)) {
-//                echo "<tr><td>" . $key . "</td><td>" . $val['xmname'] . "</td><td>" . $val['lb'] . "</td><td>" . $val['sorce'] . "</td><td>" . $val['sorce'] * $val['lb'] . "</td></tr>";
-//
-//            }
-//        }
-//
-//
-//        echo "</table>";

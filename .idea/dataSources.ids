@@ -14,6 +14,16 @@
       <column name="appleid" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="backschool" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_id" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="major" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="classnum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="beizhu" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="log" schema="" catalog="hemisuna_manager" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="student_id" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
@@ -129,9 +139,19 @@
       <column name="wmqs" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5paH5piO5a+d5a6k"/>
       <column name="wmqsry" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+b6KGM5paH5piO5a+d5a6k5bu66K6+55qE5Lq65ZGY"/>
       <column name="nlbeizhu" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="6IO95Yqb5aSH5rOo"/>
-      <column name="gxyb" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6Zmi5p2vIOS4quaAp+agjw=="/>
-      <column name="gxydh" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="6L+Q5Yqo5LyaIOS4quaAp+agjw=="/>
+      <column name="cxlsum" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5Yib5paw57G7"/>
+      <column name="cylsum" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5omN6Im657G7"/>
       <primary-key name="PRIMARY" columns="student_id"/>
+    </table>
+    <table name="zc_gx" schema="" catalog="hemisuna_manager" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="xmname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="6aG555uu5ZCN"/>
+      <column name="lb" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12" remarks="57G75Yir"/>
+      <column name="sorce" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7" remarks="5YiG5pWw"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="54q25oCB"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
   </data-source>
 </component>

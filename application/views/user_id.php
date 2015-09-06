@@ -131,9 +131,20 @@
 													echo "请尽快添加qq号";
 												} ?></li>
 											<li><i class="fa-li fa fa-phone"></i><strong>短号:</strong>
-												<? echo $userinfo['short_phone']; ?></li>
+												<?
+												if (!$this->User_data->user_role($loginUserid, 30)) {
+													echo $userinfo['short_phone'];
+												}else{
+													echo '权限不足无法查看';
+												}
+												?></li>
 											<li><i class="fa-li fa fa-mobile-phone"></i><strong>长号:</strong>
-												<? echo $userinfo['long_phone']; ?></li>
+												<? if (!$this->User_data->user_role($loginUserid, 30)) {
+													echo $userinfo['long_phone'];
+												}else{
+													echo '权限不足无法查看';
+												}
+												?></li>
 											<li><i class="fa-li glyphicon glyphicon-paperclip"></i><strong>Email:</strong>
 												<? if ($userinfo['email']) {
 													echo $userinfo['email'];

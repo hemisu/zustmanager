@@ -20,7 +20,7 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 <script src="<?php echo base_url(); ?>js/modalEffects.js"></script>
 <header class="navbar" id="header-navbar">
 	<div class="container">
-		<a href="index.html" id="logo" class="navbar-brand">
+		<a href="<?php echo base_url(); ?>" id="logo" class="navbar-brand">
 			<img src="<?php echo base_url(); ?>img/logo.png" alt="" class="normal-logo logo-white"/>
 			<img src="<?php echo base_url(); ?>img/logo-black.png" alt="" class="normal-logo logo-black"/>
 			<img src="<?php echo base_url(); ?>img/logo-small.png" alt=""
@@ -60,7 +60,7 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 					<li class="dropdown hidden-xs">
 						<a class="btn dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-warning"></i>
-							<span class="count">2</span><!--任务提醒计数-->
+							<span class="count">1</span><!--任务提醒计数-->
 						</a>
 						<ul class="dropdown-menu notifications-list">
 							<li class="pointer">
@@ -68,21 +68,21 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 									<div class="arrow"></div>
 								</div>
 							</li>
-							<li class="item-header">您目前有2个待办事项</li>
+							<li class="item-header">您目前有1个待办事项</li>
 							<li class="item">
-								<a href="#">
+								<a href="<?php echo base_url('task/backschool'); ?>">
 									<i class="fa fa-comment"></i>
-									<span class="content">13级2015年暑假留校申请</span>
+									<span class="content">2015秋季返校统计</span>
 									<span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
 								</a>
 							</li>
-							<li class="item">
-								<a href="<?php echo base_url('task/zc'); ?>">
-									<i class="fa fa-plus"></i>
-									<span class="content">奖学金评定</span>
-									<span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-								</a>
-							</li>
+<!--							<li class="item">-->
+<!--								<a href="--><?php //echo base_url('task/zc'); ?><!--">-->
+<!--									<i class="fa fa-plus"></i>-->
+<!--									<span class="content">奖学金评定</span>-->
+<!--									<span class="time"><i class="fa fa-clock-o"></i>13 min.</span>-->
+<!--								</a>-->
+<!--							</li>-->
 							<li class="item-footer">
 								<a href="#">
 									查看所有的待办事项
@@ -114,16 +114,16 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 												<img style="width:35px;"
 												     src="<?$head_img = "public/images/" . $msguserfrom['head_img'];
 												     echo base_url("$head_img");?>" alt=""/><!--发送信息者头像-->
-                                        <span class="content">
-                                            <span class="content-headline">
-                                            <? echo $msguserfrom['username']; ?> <!--发送信息者名字-->
-                                            </span>
-                                            <span class="content-text">
-                                            <? echo $row->content; ?> <!--信息内容-->
-                                            </span>
-                                        </span>
-                                        <span class="time"><i
-		                                        class="fa fa-clock-o"></i><? echo $row->date; ?></span>
+                      <span class="content">
+                          <span class="content-headline">
+                          <? echo $msguserfrom['username']; ?> <!--发送信息者名字-->
+                          </span>
+                          <span class="content-text">
+                          <? echo $row->content; ?> <!--信息内容-->
+                          </span>
+                      </span>
+                      <span class="time"><i
+                          class="fa fa-clock-o"></i><? echo $row->date; ?></span>
 											</a>
 										</li>
 									<?
@@ -139,11 +139,11 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 							</li>
 						</ul>
 					</li>
-					<!--                    <li class="hidden-xs">
-																	<a class="btn">
-																			<i class="fa fa-cog"></i>
-																	</a>
-															</li>-->
+		<!--                    <li class="hidden-xs">
+														<a class="btn">
+																<i class="fa fa-cog"></i>
+														</a>
+													</li>-->
 					<li class="dropdown profile-dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="<? $head_img = "public/images/" . $loginUserInfo['head_img'];
@@ -156,6 +156,7 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 							<!--<li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>-->
 							<li><a data-toggle="modal" href="#mydata"><i class="fa fa-cog"></i>修改资料</a></li>
 							<li><a href="#"><i class="fa fa-envelope-o"></i>消息</a></li>
+							<?if(!$this->User_data->user_role($loginUserid, 50)) {?><li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-cogs"></i>管理</a></li><?}?>
 							<li><a href="<?php echo base_url('login/loginout'); ?>"><i class="fa fa-power-off"></i>登出</a></li>
 						</ul>
 					</li>

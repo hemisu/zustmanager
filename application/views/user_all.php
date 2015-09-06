@@ -70,6 +70,7 @@
 												<th><span>用户名</span></th>
 												<th><span>学号</span></th>
 												<th><span>班级</span></th>
+												<th><span>qq</span></th>
 												<th><span>长号</span></th>
 												<th><span>短号</span></th>
 												<th class="text-center"><span>状态</span></th>
@@ -78,41 +79,64 @@
 											</thead>
 											<tbody>
 											<?
-											foreach ($this->User_data->userinfo_all()->result() as $row) {
+											foreach ($alluser as $row) {
 												?>
 												<tr>
 													<td>
 														<img src="<? $head_img = "public/images/" . $row->head_img;
 														echo base_url("$head_img"); ?>" alt=""/>
 														<a href="#" class="user-link"><? echo $row->username; ?></a>
-                                                    <span class="user-subhead">
-                                                        <?php
-                                                        switch ($row->role_id) {
-	                                                        case 10:
-		                                                        echo "班委";
-		                                                        break;
-	                                                        case 20:
-		                                                        echo "学委";
-		                                                        break;
-	                                                        case 30:
-		                                                        echo "团支书";
-		                                                        break;
-	                                                        case 40:
-		                                                        echo "班长";
-		                                                        break;
-	                                                        case 50:
-		                                                        echo "管理员";
-		                                                        break;
-	                                                        default:
-		                                                        echo "会员";
-                                                        }
-                                                        ?>
-                                                    </span>
+                              <span class="user-subhead">
+                                <?php
+                                switch ($row->role_id) {
+                                  case 10:
+                                    echo "班委";
+                                    break;
+                                  case 20:
+                                    echo "学委";
+                                    break;
+                                  case 30:
+                                    echo "团支书";
+                                    break;
+                                  case 40:
+                                    echo "班长";
+                                    break;
+                                  case 50:
+                                    echo "管理员";
+                                    break;
+                                  default:
+                                    echo "会员";
+                                }
+                                ?>
+                              </span>
 													</td>
 													<td><? echo $row->student_id; ?></td>
 													<td><? echo $row->major . $row->classnum; ?></td>
-													<td><? echo $row->long_phone; ?></td>
-													<td><? echo $row->short_phone; ?></td>
+													<td>
+														<?
+														if (!$this->User_data->user_role($loginUserid, 30)) {
+															echo $row->qq;
+														}else{
+															echo '<i class="fa fa-spinner fa-spin"></i>权限不足无法查看';
+														}
+														?>
+													</td>
+													<td>
+														<?
+														if (!$this->User_data->user_role($loginUserid, 30)) {
+															echo $row->long_phone;
+														}else{
+															echo '<i class="fa fa-spinner fa-spin"></i>权限不足无法查看';
+														}
+														?>
+													</td>
+													<td>
+														<?
+														if (!$this->User_data->user_role($loginUserid, 30)) {
+															echo $row->short_phone;
+														}else{
+															echo '<i class="fa fa-spinner fa-spin"></i>权限不足无法查看';
+														} ?></td>
 													<td class="text-center"><?
 														if ($row->status) {
 															echo "<span class='label label-success'>Online</span>";
@@ -121,12 +145,14 @@
 														}
 														?></td>
 													<td style="width: 20%;">
-														<a href="#" class="table-link">
+														<a href="<?=base_url("user/sid/$row->student_id")?>" class="table-link">
                                                     <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                                     </span>
 														</a>
+														<?
+														if (!$this->User_data->user_role($loginUserid, 50)) {?>
 														<a href="#" class="table-link">
                                                     <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
@@ -138,12 +164,37 @@
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                                     </span>
+														<?}	?>
 														</a>
 													</td>
 												</tr>
 											<? } ?>
 											</tbody>
 										</table>
+										<?
+										$config['base_url'] = base_url('user/all');
+										$config['total_rows'] = $this->db->from('user')->get()->num_rows();
+										$config['per_page'] = 20;
+										$config['use_page_numbers'] = TRUE;
+										$config['full_tag_open'] = '<div class="main-box-body clearfix">
+																							<ul class="pagination">';
+										$config['full_tag_close'] = '</div>';
+										$config['num_tag_open'] = '<li>';
+										$config['num_tag_close'] = '</li>';
+										$config['cur_tag_open'] = '<li class="active"><a href="#">';
+										$config['cur_tag_close'] = '</a></li>';
+										$config['prev_tag_open'] = '<li>';//上一页
+										$config['prev_tag_close'] = '</li>';
+										$config['next_tag_open'] = '<li>';//下一页
+										$config['next_tag_close'] = '</li>';
+										$config['last_tag_open'] = '<li>';//最后一页
+										$config['last_tag_close'] = '</li>';
+										$config['first_tag_open'] = '<li>';//第一页
+										$config['first_tag_close'] = '</li>';
+										$this->pagination->initialize($config);
+
+										echo $this->pagination->create_links();
+										?>
 									</div>
 								</div>
 							</div>

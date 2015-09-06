@@ -33,6 +33,13 @@ class User extends CI_Controller
 				'email' => $email
 			);
 			if ($this->db->from('user')->where('student_id', $id)->update('user', $insert)) {
+				$log = array(
+					'student_id' => $this->session->userdata('student_id'),
+					'username' => $this->session->userdata('username'),
+					'events' => '修改EMAIL',
+					'time' => date("Y-m-d H:i:s")
+				);
+				$this->db->insert('log', $log);//记录事件 登出
 				$data['success'][] = "email修改成功";
 			} else {
 				$data['success'][] = "email修改失败";
@@ -44,6 +51,13 @@ class User extends CI_Controller
 				'qq' => $qq
 			);
 			if ($this->db->from('user')->where('student_id', $id)->update('user', $insert)) {
+				$log = array(
+					'student_id' => $this->session->userdata('student_id'),
+					'username' => $this->session->userdata('username'),
+					'events' => '修改QQ',
+					'time' => date("Y-m-d H:i:s")
+				);
+				$this->db->insert('log', $log);//记录事件 登出
 				$data['success'][] = "QQ修改成功";
 			} else {
 				$data['success'][] = "QQ修改失败";
@@ -55,6 +69,13 @@ class User extends CI_Controller
 					'password' => $password
 				);
 				if ($this->db->from('user')->where('student_id', $id)->update('user', $insert)) {
+					$log = array(
+						'student_id' => $this->session->userdata('student_id'),
+						'username' => $this->session->userdata('username'),
+						'events' => '修改密码',
+						'time' => date("Y-m-d H:i:s")
+					);
+					$this->db->insert('log', $log);//记录事件
 
 					$data['success'][] = "密码修改成功，请重新登陆";//成功信息
 					header("refresh:3;url=$current_url");
@@ -121,16 +142,18 @@ class User extends CI_Controller
 	public function all()
 	{
 		$this->load->model('User_data'); //Load user data model
+		$this->load->library('pagination');
 		if ($this->User_data->is_login() == False) {
 			redirect(base_url('login'));
 		}
 		$id = $this->session->userdata('student_id');
 
 		$this->load->model('User_data'); //Load user data model
-		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
+		if ($this->User_data->is_login() == False) {
 			redirect(base_url('login'));
 		}
-
+		$offset = $this->uri->segment(3, 0);
+		$data['alluser']=$this->User_data->userinfo_all(20,$offset)->result();
 		$data['userinfo'] = $this->User_data->userinfo($id);
 
 		$this->load->view('user_all', $data);
@@ -142,7 +165,7 @@ class User extends CI_Controller
 
 		$this->load->model('User_data'); //Load user data model
 		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
-			redirect(base_url('login'));
+		redirect(base_url('login'));
 		}
 
 
