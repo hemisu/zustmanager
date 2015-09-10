@@ -129,7 +129,7 @@
 									?>
 										<tr>
 											<td><?= $row->major.$row->classnum; ?></td>
-											<td><?= $row->student_id; ?></td>
+											<td><a href="<?=base_url("task/zc/sid/$row->student_id")?>"><?= $row->student_id; ?></a> </td>
 											<td><?= $row->username; ?></td>
 											<td><?= $row->ztyxf; ?></td>
 											<td><?= $row->xxjtzb; //校先进团支部?></td>
@@ -140,16 +140,11 @@
 											<td><?= $row->zgdb; ?></td>
 											<td><?= $row->xssc90; ?></td>
 											<td><?= $row->wxtchlwjy; ?></td>
-											<td><?= $yqdjf = $row->zyzdx+$row->yjtbby+$row->yjyxtzb+$row->xx+$row->pwjns+$row->wsyx+$row->rjxyqdjf; //院确定加分?></td>
+											<td><?= $yqdjf = $row->zyzdx+$row->yjtbby+$row->yjyxtzb+$row->xx+$row->pwjns+$row->wsyx+$row->ejxyqdjf; //院确定加分?></td>
 											<td><?= $add = $row->xxjtzb+
-												$row->xtyxfb+
-												$row->xylxfb+
-												$row->yylxfb+
-												$row->yxqs+
-												$row->qtxjxjjt+
-												$row->tbby+
-												$row->zgdb+
-												$row->xssc90+
+												$row->xxjtzb+
+												$row->xtyxfb+$row->xylxfb+$row->yylxfb+$row->yxqs+$row->qtxjxjjt+$row->tbby+
+												$row->zgdb+$row->xssc90+$row->wxtchlwjy+
 												$yqdjf; //加分小计?></td>
 											<td><?= $row->ktxwgf; ?></td>
 											<td><?= $row->ssjf; ?></td>
@@ -170,7 +165,8 @@
 													$row->wjcf+
 													$row->rjxyqdjf;//减分小计 ?></td>
 											<td><?= $add+$minus; ?></td>
-											<td><?= $row->ztyxf*0.7*0.15+($add+$minus)*0.15; ?></td>
+											<td><?$dysum = $row->ztyxf*0.7*0.15+($add+$minus)*0.15;
+												if($dysum>15){echo $dysum=15;}else{echo $dysum;}?></td>
 											<td><?= $row->all*0.7; ?></td>
 											<td><?= $zzxx = $row->zypm+
 												$row->fxk+
@@ -204,7 +200,7 @@
 												$row->z5+
 												$row->z3+
 												$row->xjgr;//组织交流?></td>
-											<td><?= $zzxx+$sjcx+$zzjl+6;//能力测评小计?></td>
+											<td><?if($nlsum=$zzxx+$sjcx+$zzjl+6>15){echo $nlsum=15;}else{echo $nlsum;};//能力测评小计?></td>
 											<td><?= $row->cxlsum;//创新类?></td>
 											<td><?= $row->cylsum;//才艺类?></td>
 											<td><?= '0'//其他类?></td>
@@ -214,7 +210,7 @@
 											echo $gxsum;//个性小计?></td>
 											<td><?= $row->ztyxf*0.7*0.15+($add+$minus)*0.15+
 												$row->all*0.7+
-												$zzxx+$sjcx+$zzjl+6+
+												$nlsum+
 												$row->cxlsum+$row->cylsum;//综合测评总分?></td>
 										</tr>
 									<?

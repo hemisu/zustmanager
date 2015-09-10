@@ -17,7 +17,7 @@ class User_data extends CI_Model
 		if ($this->session->userdata('username')) {
 			return true;
 		} else {
-			return false;
+			return FALSE;
 		}
 	}
 
@@ -157,32 +157,39 @@ class User_data extends CI_Model
 		return true;
 	}
 
-	function time_tran($the_time) {
-		date_default_timezone_set("Asia/Shanghai");   //设置时区
-		$now_time = date("Y-m-d H:i:s", time());
-		//echo $now_time;
-		$now_time = strtotime($now_time);
-		$show_time = strtotime($the_time);
-		$dur = $now_time - $show_time;
-		if ($dur < 0) {
-			return $the_time;
-		} else {
-			if ($dur < 60) {
-				return $dur . '秒前';
-			} else {
-				if ($dur < 3600) {
-					return floor($dur / 60) . '分钟前';
-				} else {
-					if ($dur < 86400) {
-						return floor($dur / 3600) . '小时前';
-					} else {
-						if ($dur < 259200) {//3天内
-							return floor($dur / 86400) . '天前';
-						} else {
-							return $the_time;
+	function time_tran($date) {
+		$str = '';
+		$timer = strtotime($date);
+		$diff = $_SERVER['REQUEST_TIME'] - $timer;
+		$day = floor($diff / 86400);
+		$free = $diff % 86400;
+		if($day > 0) {
+			return $day."天前";
+		}else{
+			if($free>0){
+				$hour = floor($free / 3600);
+				$free = $free % 3600;
+				if($hour>0){
+					return $hour."小时前";
+				}else{
+					if($free>0){
+						$min = floor($free / 60);
+						$free = $free % 60;
+						if($min>0){
+							return $min."分钟前";
+						}else{
+							if($free>0){
+								return $free."秒前";
+							}else{
+								return '刚刚';
+							}
 						}
+					}else{
+						return '刚刚';
 					}
 				}
+			}else{
+				return '刚刚';
 			}
 		}
 	}

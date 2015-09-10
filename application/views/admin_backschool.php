@@ -98,7 +98,7 @@
 								</tr>
 								<?
 								foreach($arr as $val){
-									$tz = $wlxs =$qj = 0;
+									$tz = $wlxs =$qj = $weizhi =0;
 								?>
 								<tr>
 									<td><?=$val->major.$val->classnum;?></td>
@@ -107,7 +107,9 @@
 									foreach($arr1 as $v){
 
 										if($v->major == $val->major && $v->classnum == $val->classnum){
-
+											if($v->status=="0"){
+												$weizhi = $v->{'COUNT(*)'};//途中
+											}
 											if($v->status=="途中"){
 												$tz = $v->{'COUNT(*)'};//途中
 											}
@@ -118,7 +120,7 @@
 												$qj = $v->{'COUNT(*)'};//途中
 											}
 										}
-										$val->arrive = $val->{'COUNT(*)'} - $tz -$wlxs -$qj;
+										$val->arrive = $val->{'COUNT(*)'} - $tz -$wlxs -$qj -$weizhi;
 									}
 									?>
 									<td>
@@ -141,6 +143,29 @@
 								<tr>
 
 								</tr>
+							</table>
+								<h3>详细信息</h3>
+							<table class="table table-condensed table-hover">
+								<tr>
+									<td>姓名</td>
+									<td>班级</td>
+									<td>状态</td>
+									<td>备注</td>
+									<td>&nbsp;</td>
+								</tr>
+								<?
+								foreach($backinfo as $row){
+									?>
+									<tr>
+										<td><?=$row->username;?></td>
+										<td><?=$row->major.$row->classnum;?></td>
+										<td><?=$row->status;?></td>
+										<td><?=$row->beizhu;?></td>
+										<td>
+											<a href="<?$url='task/backschooldel/'.$row->student_id;echo base_url($url);?>" >x</a>
+										</td>
+									</tr>
+								<?}?>
 							</table>
 							</div>
 						</div>

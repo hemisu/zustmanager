@@ -83,12 +83,12 @@
 											</thead>
 											<tbody>
 											<?
-											foreach ($this->User_data->userinfo_all()->result() as $row) {
+											foreach ($this->db->from('user')->get()->result() as $row) {
 												?>
 												<tr>
 													<td><?php echo $row->student_id; ?></td>
 													<td><? echo $row->major . $row->classnum; ?></td>
-													<td><? echo $row->username; ?></td>
+													<td><a href="<?=base_url("user/sid/$row->student_id")?>" class="table-link"><? echo $row->username; ?></a></td>
 													<td><?
 														if ($row->sex) {
 															echo "男";

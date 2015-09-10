@@ -44,8 +44,9 @@ class Admin extends CI_Controller
 		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 50)) {
 			redirect(base_url('login'));
 		}
+		$data['backinfo'] = $this->db->select('*')->from('backschool')->get()->result();
 
-		$this->load->view('admin_backschool');
+		$this->load->view('admin_backschool',$data);
 
 
 //		$this->db->select('major,classnum')->distinct('classnum')->group_by(array("major", "classnum")); ;

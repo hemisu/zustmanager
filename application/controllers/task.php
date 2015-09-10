@@ -66,6 +66,22 @@ class Task extends CI_Controller
 //print_r($data['zcmasterinfo']);
 				$this->load->view('task_zc_post', $data);
 				break;
+			//综测详细信息
+			case 'sid':
+				if ($this->User_data->is_login() == False) {
+					redirect(base_url('login'));
+				}
+				$zcid = $this->uri->segment(4, 0);
+				$zcidinfo = $data['zcidinfo'] = $this->db->from('zc')->where('student_id',$zcid)->get()->result_array();
+				$data['zcidinfogx'] = $this->db->from('zc_gx')->where('student_id',$zcid)->get()->result();
+				$this->load->view('task_zc_sid', $data);
+//				print_r($zcidinfo[0]);
+//				echo "<pre>";
+//				reset($zcidinfo[0]);
+//				while (list($key, $val) = each($zcidinfo[0])) {
+//					echo "$key => $val\n";
+//				}
+				break;
 			default:
 				break;
 		}
@@ -118,7 +134,7 @@ class Task extends CI_Controller
 	{
 
 		$id = $this->session->userdata('student_id');
-		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 40)) {
+		if ($this->User_data->is_login() == False || $this->User_data->user_role($id, 1)) {
 			redirect(base_url('login'));
 		}
 		$major = $this->session->userdata('major');//电气

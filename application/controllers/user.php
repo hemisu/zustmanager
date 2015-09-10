@@ -182,8 +182,10 @@ class User extends CI_Controller
 			redirect(base_url('login'));
 		}
 		$id = $this->session->userdata('student_id');
-
+		$major = $this->session->userdata('major');
+		$classnum = $this->session->userdata('classnum');
 		$data['userinfo'] = $this->User_data->userinfo($id);
+		$data['classmates'] = $this->db->from('user')->where('major',$major)->where('classnum',$classnum)->get()->result();
 
 		$this->load->view('user_profile', $data);
 

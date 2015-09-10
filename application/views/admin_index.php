@@ -61,6 +61,7 @@
 							</header>
 							<div class="main-box-body clearfix">
 								<ul>
+									<li><a href="http://hkhost10.cachechina.org/phpmyadmin/">PhpMyadmin</a> </li>
 									<li><a href="<?=base_url('admin/log')?>">操作日志</a></li>
 									<li><a href="<?=base_url('admin/backschool')?>">返校统计</a></li>
 								</ul>

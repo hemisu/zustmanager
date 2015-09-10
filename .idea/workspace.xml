@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c24acfc-a726-4710-8322-a53e53a8de1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_backschool.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/task_zc_sid.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/favicon.png" afterPath="$PROJECT_DIR$/favicon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_backschool.php" afterPath="$PROJECT_DIR$/application/views/admin_backschool.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_index.php" afterPath="$PROJECT_DIR$/application/views/admin_index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_log.php" afterPath="$PROJECT_DIR$/application/views/admin_log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.php" afterPath="$PROJECT_DIR$/application/views/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/task.php" afterPath="$PROJECT_DIR$/application/controllers/task.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/task_zc.php" afterPath="$PROJECT_DIR$/application/views/task_zc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/task_zc_backschool.php" afterPath="$PROJECT_DIR$/application/views/task_zc_backschool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/task_zc_list.php" afterPath="$PROJECT_DIR$/application/views/task_zc_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_all.php" afterPath="$PROJECT_DIR$/application/views/user_all.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_all_condensed.php" afterPath="$PROJECT_DIR$/application/views/user_all_condensed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_data.php" afterPath="$PROJECT_DIR$/application/models/user_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_profile.php" afterPath="$PROJECT_DIR$/application/views/user_profile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zustmanager.iws" />
@@ -40,24 +51,35 @@
       <entry key="hjjn/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="hyjt/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="jz/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Blue" />
+      <entry key="qtxjxjjt/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="r1500/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="r5000/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="shsj/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="sjqs/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
+      <entry key="tbby/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="tzb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="wmqs/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="wmqsry/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="wxdcx/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
+      <entry key="wxtchlwjy/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="xjgr/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Orange" />
       <entry key="xsbg/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Blue" />
+      <entry key="xssc90/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
+      <entry key="xtyxfb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
+      <entry key="xxjtzb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
+      <entry key="xylxfb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="ydh/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="ydhfzr/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
       <entry key="ydy/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
+      <entry key="yxqs/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
+      <entry key="yylxfb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="z1/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Orange" />
       <entry key="z3/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Orange" />
       <entry key="z5/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Orange" />
       <entry key="z8/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Orange" />
+      <entry key="zgdb/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="zs/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Blue" />
+      <entry key="ztyxf/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Yellow" />
       <entry key="zypm/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Blue" />
       <entry key="zysy/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Blue" />
       <entry key="zzjs/zc//hemisuna_manager/c8a79156-44d2-4e85-93c5-f5406bd22059:column" value="Rose" />
@@ -82,6 +104,28 @@
         <option name="myItemId" value="hemisuna_manager" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="zc_gx" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - hemisuna_manager@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hemisuna_manager" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="zc" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -98,6 +142,20 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="user" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - hemisuna_manager@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hemisuna_manager" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -144,23 +202,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user_id.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user_id.php">
+      <file leaf-file-name="user_profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user_profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.115385" vertical-offset="1640" max-vertical-offset="4170">
-              <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="1200" max-vertical-offset="7350">
+              <caret line="80" column="41" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="41" />
               <folding>
-                <marker date="1441512038000" expanded="false" signature="2244:2258" placeholder="..." />
+                <element signature="e#6#84#0#PHP" expanded="true" />
+                <marker date="1441768375000" expanded="true" signature="2164:2178" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="task_zc_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/task_zc_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.076923" vertical-offset="1654" max-vertical-offset="3735">
+              <caret line="131" column="106" selection-start-line="131" selection-start-column="106" selection-end-line="131" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_data.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/user_data.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="3015">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/task.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.423077" vertical-offset="4245" max-vertical-offset="5985">
-              <caret line="308" column="12" selection-start-line="308" selection-start-column="12" selection-end-line="308" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.35390198" vertical-offset="1845" max-vertical-offset="6225">
+              <caret line="136" column="83" selection-start-line="136" selection-start-column="83" selection-end-line="136" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_zc_status.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/task_zc_status.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.4615383" vertical-offset="3601" max-vertical-offset="4380">
+              <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="509" selection-end-column="6" />
+              <folding>
+                <element signature="tag#ol#2;tag#ol#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_zc_sid.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/task_zc_sid.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.038462" vertical-offset="1294" max-vertical-offset="1950">
+              <caret line="604" column="21" selection-start-line="587" selection-start-column="0" selection-end-line="604" selection-end-column="21" />
+              <folding>
+                <element signature="e#6#84#0#PHP" expanded="true" />
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.3461537" vertical-offset="784" max-vertical-offset="2085">
+              <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -169,85 +285,40 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.26923" vertical-offset="1090" max-vertical-offset="2070">
-              <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7654321" vertical-offset="430" max-vertical-offset="2010">
-              <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_log.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin_log.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3076925" vertical-offset="1070" max-vertical-offset="2100">
-              <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+            <state vertical-scroll-proportion="-6.1923075" vertical-offset="1129" max-vertical-offset="5160">
+              <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
               <folding>
-                <marker date="1441524661000" expanded="true" signature="2774:2821" placeholder="..." />
+                <marker date="1441852577000" expanded="true" signature="2839:3015" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_backschool.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin_backschool.php">
+      <file leaf-file-name="task_zc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/task_zc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.654321" vertical-offset="1300" max-vertical-offset="2610">
-              <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+            <state vertical-scroll-proportion="-6.6538463" vertical-offset="682" max-vertical-offset="1875">
+              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
               <folding>
-                <marker date="1441530173000" expanded="true" signature="2233:2298" placeholder="SELECT major..user..." />
-                <marker date="1441530173000" expanded="true" signature="2369:2454" placeholder="SELECT major..backschool..." />
-                <marker date="1441530173000" expanded="true" signature="3697:3742" placeholder="..." />
-                <marker date="1441530173000" expanded="true" signature="3955:3970" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2075:3432" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2087:2457" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2220:2280" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2386:2453" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2506:2817" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="2866:2984" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="3129:3295" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="3217:3291" placeholder="..." />
+                <marker date="1441853248000" expanded="true" signature="3377:3390" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task_zc_backschool.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/task_zc_backschool.php">
+      <file leaf-file-name="temple_header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/part/temple_header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.307692" vertical-offset="975" max-vertical-offset="3780">
-              <caret line="100" column="28" selection-start-line="82" selection-start-column="20" selection-end-line="100" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.423077" vertical-offset="1838" max-vertical-offset="2955">
-              <caret line="151" column="45" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0246913" vertical-offset="451" max-vertical-offset="945">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/admin_index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59016395" vertical-offset="576" max-vertical-offset="1440">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            <state vertical-scroll-proportion="-5.1923075" vertical-offset="0" max-vertical-offset="3465">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -275,31 +346,33 @@
         <option value="$PROJECT_DIR$/application/views/part/temple_config_tool.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/wizard.js" />
-        <option value="$PROJECT_DIR$/application/views/user_all_condensed.php" />
         <option value="$PROJECT_DIR$/CI_phpStorm.php" />
         <option value="$PROJECT_DIR$/css/compiled/theme_styles.css" />
         <option value="$PROJECT_DIR$/system/core/Input.php" />
         <option value="$PROJECT_DIR$/system/database/DB_active_rec.php" />
         <option value="$PROJECT_DIR$/application/views/task_zc_master.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard.php" />
-        <option value="$PROJECT_DIR$/application/controllers/login.php" />
-        <option value="$PROJECT_DIR$/application/views/task_zc_status.php" />
         <option value="$PROJECT_DIR$/application/views/task_zc_post.php" />
-        <option value="$PROJECT_DIR$/application/views/task_zc.php" />
-        <option value="$PROJECT_DIR$/application/views/task_zc_list.php" />
-        <option value="$PROJECT_DIR$/application/views/user_profile.php" />
         <option value="$PROJECT_DIR$/application/views/part/temple_header.php" />
-        <option value="$PROJECT_DIR$/application/models/user_data.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
-        <option value="$PROJECT_DIR$/application/views/user_all.php" />
         <option value="$PROJECT_DIR$/application/views/user_id.php" />
-        <option value="$PROJECT_DIR$/application/views/login.php" />
-        <option value="$PROJECT_DIR$/application/views/admin_log.php" />
-        <option value="$PROJECT_DIR$/application/controllers/task.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin.php" />
-        <option value="$PROJECT_DIR$/application/views/task_zc_backschool.php" />
         <option value="$PROJECT_DIR$/application/views/admin_backschool.php" />
+        <option value="$PROJECT_DIR$/application/views/user_all_condensed.php" />
         <option value="$PROJECT_DIR$/application/views/admin_index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
+        <option value="$PROJECT_DIR$/application/views/task_zc_backschool.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_log.php" />
+        <option value="$PROJECT_DIR$/application/views/user_all.php" />
+        <option value="$PROJECT_DIR$/application/views/user_profile.php" />
+        <option value="$PROJECT_DIR$/application/views/task_zc_status.php" />
+        <option value="$PROJECT_DIR$/application/views/task_zc_list.php" />
+        <option value="$PROJECT_DIR$/application/models/user_data.php" />
+        <option value="$PROJECT_DIR$/application/views/task_zc_sid.php" />
+        <option value="$PROJECT_DIR$/application/controllers/1.php" />
+        <option value="$PROJECT_DIR$/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/application/views/login.php" />
+        <option value="$PROJECT_DIR$/application/controllers/task.php" />
+        <option value="$PROJECT_DIR$/application/views/task_zc.php" />
       </list>
     </option>
   </component>
@@ -309,8 +382,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1394" />
+    <option name="x" value="1" />
+    <option name="y" value="48" />
+    <option name="width" value="1396" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -564,6 +638,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zustmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zustmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -646,16 +738,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1394" height="877" extended-state="6" />
-    <editor active="false" />
+    <frame x="1" y="48" width="1396" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18598726" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18551461" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16346154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632201" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1923077" sideWeight="0.49936467" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19793205" sideWeight="0.49936467" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23767476" sideWeight="0.5006353" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -700,7 +792,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/controllers/task.php</url>
-          <line>352</line>
+          <line>368</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -708,26 +800,22 @@
           <line>34</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/views/user_profile.php</url>
+          <line>273</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/views/task_zc_sid.php</url>
+          <line>376</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="683">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="683">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/demo-skin-changer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="683">
@@ -804,13 +892,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_all_condensed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="2895">
-          <caret line="12" column="103" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/compiled/theme_styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="32610">
@@ -819,13 +900,13 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a7e09225/c8a79156-44d2-4e85-93c5-f5406bd22059/hemisuna_manager..user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Input.php">
@@ -908,13 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc_status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1132" max-vertical-offset="8220">
-          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="7755" max-vertical-offset="9150">
@@ -930,27 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc_post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-510.0" vertical-offset="990" max-vertical-offset="14385">
-          <caret line="950" column="5" selection-start-line="905" selection-start-column="2" selection-end-line="950" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.923077" vertical-offset="224" max-vertical-offset="3870">
-          <caret line="46" column="8" selection-start-line="34" selection-start-column="0" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.461538" vertical-offset="3592" max-vertical-offset="6435">
-          <caret line="273" column="79" selection-start-line="273" selection-start-column="69" selection-end-line="273" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/msg.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="615">
@@ -962,137 +1015,193 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/user_data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1057" max-vertical-offset="2910">
-          <caret line="81" column="60" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="742" max-vertical-offset="1860">
-          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/part/temple_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2165" max-vertical-offset="3465">
-          <caret line="158" column="70" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1265" max-vertical-offset="3420">
-          <caret line="121" column="30" selection-start-line="115" selection-start-column="28" selection-end-line="121" selection-end-column="30" />
-          <folding>
-            <marker date="1441511929000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.115385" vertical-offset="1640" max-vertical-offset="4170">
-          <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
-          <folding>
-            <marker date="1441512038000" expanded="false" signature="2244:2258" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.26923" vertical-offset="1090" max-vertical-offset="2070">
-          <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7654321" vertical-offset="430" max-vertical-offset="2010">
-          <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.423077" vertical-offset="4245" max-vertical-offset="5985">
-          <caret line="308" column="12" selection-start-line="308" selection-start-column="12" selection-end-line="308" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3076925" vertical-offset="1070" max-vertical-offset="2100">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-          <folding>
-            <marker date="1441524661000" expanded="true" signature="2774:2821" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc_master.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8506376" vertical-offset="2471" max-vertical-offset="3390">
-          <caret line="102" column="65" selection-start-line="99" selection-start-column="32" selection-end-line="102" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/task_zc_backschool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.307692" vertical-offset="975" max-vertical-offset="3780">
-          <caret line="100" column="28" selection-start-line="82" selection-start-column="20" selection-end-line="100" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin_backschool.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.654321" vertical-offset="1300" max-vertical-offset="2610">
-          <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-          <folding>
-            <marker date="1441530173000" expanded="true" signature="2233:2298" placeholder="SELECT major..user..." />
-            <marker date="1441530173000" expanded="true" signature="2369:2454" placeholder="SELECT major..backschool..." />
-            <marker date="1441530173000" expanded="true" signature="3697:3742" placeholder="..." />
-            <marker date="1441530173000" expanded="true" signature="3955:3970" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.423077" vertical-offset="1838" max-vertical-offset="2955">
-          <caret line="151" column="45" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2985">
+          <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+    <entry file="file://$PROJECT_DIR$/application/views/user_all_condensed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0246913" vertical-offset="451" max-vertical-offset="945">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2835">
+          <caret line="90" column="132" selection-start-line="90" selection-start-column="132" selection-end-line="90" selection-end-column="132" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59016395" vertical-offset="576" max-vertical-offset="1440">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="1455">
+          <caret line="63" column="85" selection-start-line="63" selection-start-column="85" selection-end-line="63" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_backschool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.038462" vertical-offset="1980" max-vertical-offset="3855">
+          <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.730769" vertical-offset="1070" max-vertical-offset="2085">
+          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-41.923077" vertical-offset="1475" max-vertical-offset="3405">
+          <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_master.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="39.076923" vertical-offset="2471" max-vertical-offset="3390">
+          <caret line="102" column="65" selection-start-line="99" selection-start-column="32" selection-end-line="102" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_id.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1640" max-vertical-offset="4170">
+          <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+          <folding>
+            <marker date="1441512038000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2003" max-vertical-offset="2985">
+          <caret line="185" column="20" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13225" max-vertical-offset="14310">
+          <caret line="941" column="0" selection-start-line="941" selection-start-column="0" selection-end-line="941" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="960">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="7350">
+          <caret line="80" column="41" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#84#0#PHP" expanded="true" />
+            <marker date="1441768375000" expanded="true" signature="2164:2178" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4615383" vertical-offset="3601" max-vertical-offset="4380">
+          <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="509" selection-end-column="6" />
+          <folding>
+            <element signature="tag#ol#2;tag#ol#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.076923" vertical-offset="1654" max-vertical-offset="3735">
+          <caret line="131" column="106" selection-start-line="131" selection-start-column="106" selection-end-line="131" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc_sid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.038462" vertical-offset="1294" max-vertical-offset="1950">
+          <caret line="604" column="21" selection-start-line="587" selection-start-column="0" selection-end-line="604" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#84#0#PHP" expanded="true" />
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="3015">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3461537" vertical-offset="784" max-vertical-offset="2085">
+          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1923075" vertical-offset="1129" max-vertical-offset="5160">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <marker date="1441852577000" expanded="true" signature="2839:3015" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/part/temple_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.1923075" vertical-offset="0" max-vertical-offset="3465">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/task_zc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6538463" vertical-offset="682" max-vertical-offset="1875">
+          <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+          <folding>
+            <marker date="1441853248000" expanded="true" signature="2075:3432" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="2087:2457" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="2220:2280" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="2386:2453" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="2506:2817" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="2866:2984" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="3129:3295" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="3217:3291" placeholder="..." />
+            <marker date="1441853248000" expanded="true" signature="3377:3390" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35390198" vertical-offset="1845" max-vertical-offset="6225">
+          <caret line="136" column="83" selection-start-line="136" selection-start-column="83" selection-end-line="136" selection-end-column="83" />
           <folding />
         </state>
       </provider>

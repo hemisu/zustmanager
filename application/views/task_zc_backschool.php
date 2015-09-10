@@ -33,11 +33,12 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<style>
-		.table tbody>tr>td:first-child {
+		.table tbody > tr > td:first-child {
 			font-size: 8px;
 			font-weight: 300;
 		}
-		.table tbody>tr>td {
+
+		.table tbody > tr > td {
 			font-size: 0.875em;
 			vertical-align: middle;
 			border-top: 1px solid #e7ebee;
@@ -77,6 +78,7 @@
 								<div class="row">
 									<div class="col-lg-6">
 										<h3>本班返校信息</h3>
+
 										<p>
 											可以随时修改同学信息，截止提交时间6号晚上8点。
 										</p>
@@ -92,11 +94,11 @@
 												<td width="88">请假人数(5)</td>
 											</tr>
 											<tr>
-												<td><?=$allnum;?></td>
-												<td><?=$allnum-$tuzhong-$weilianxishang-$qingjia;?></td>
-												<td><?=$tuzhong;?></td>
-												<td><?=$weilianxishang;?></td>
-												<td><?=$qingjia;?></td>
+												<td><?= $allnum; ?></td>
+												<td><?= $allnum - $tuzhong - $weilianxishang - $qingjia; ?></td>
+												<td><?= $tuzhong; ?></td>
+												<td><?= $weilianxishang; ?></td>
+												<td><?= $qingjia; ?></td>
 											</tr>
 										</table>
 										<table class="table table-condensed table-hover">
@@ -107,25 +109,30 @@
 												<td>&nbsp;</td>
 											</tr>
 											<?
-											foreach($backinfo as $row){
+											foreach ($backinfo as $row) {
 												?>
 												<tr>
-													<td><?=$row->username;?></td>
-													<td><?=$row->status;?></td>
-													<td><?=$row->beizhu;?></td>
+													<td><?= $row->username; ?></td>
+													<td><?= $row->status; ?></td>
+													<td><?= $row->beizhu; ?></td>
 													<td>
-														<a href="<?$url='task/backschooldel/'.$row->student_id;echo base_url($url);?>" >x</a>
+														<a href="<? $url = 'task/backschooldel/' . $row->student_id;
+														echo base_url($url); ?>"><span class="label label-danger">删除</span></a>
 													</td>
 												</tr>
-											<?}?>
+											<? } ?>
 										</table>
 										<p>说明：1、(1)=(2)+(3)+(4)+(5)，其中(3)指已经离家往学校赶路，预计在开学前能到校的人数；2、备注栏里请填写学生未到校情况（原因、时间）。</p>
-										<br />
+										<br/>
+
 										<form role="form" method="post" action="<?php echo base_url('task/postbackschool'); ?>">
 											<?
 											$major = $this->session->userdata('major');//电气
 											$classnum = $this->session->userdata('classnum');//134
 											?>
+											<h3>提交信息区域</h3>
+
+											<p>到齐则不用提交信息</p>
 											<a href="#" id="AddMoreFileBox" class="btn btn-info">添加更多</a></span></p>
 											<table class="table table-condensed table-hover" id="InputsWrapper">
 												<tr>
@@ -149,26 +156,19 @@
 														</select>
 													</td>
 													<td>
-														<input class="form-control" type="text" name="backschool[0][beizhu]" placeholder="该同学未到原因，预计到达时间">
+														<input class="form-control" type="text" name="backschool[0][beizhu]"
+														       placeholder="该同学未到原因，预计到达时间">
 													</td>
 													<td>
 														<a href="#" class="removeclass">×</a>
 													</td>
 												</tr>
 											</table>
+											<input type="hidden" name="current_url" value="<?= current_url(); ?>">
+											<button type="submit" class="btn btn-success col-xs-12">提交</button>
+										</form>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<br/>
-										<br/>
-										<br/>
-										<input type="hidden" name="current_url" value="<?= current_url(); ?>">
-										<button type="submit" class="btn btn-success col-xs-12">提交</button>
-									</div>
-								</div>
-								</form>
-
 							</div>
 						</div>
 					</div>
@@ -219,9 +219,9 @@
 					<?
 					}
 					?>
-					'</select></td>'+
-					'<input type="hidden" name="backschool[' + FieldCount + '][major]" value="<?= $major; ?>">'+
-					'<input type="hidden" name="backschool[' + FieldCount + '][classnum]" value="<?= $classnum; ?>">'+
+					'</select></td>' +
+					'<input type="hidden" name="backschool[' + FieldCount + '][major]" value="<?= $major; ?>">' +
+					'<input type="hidden" name="backschool[' + FieldCount + '][classnum]" value="<?= $classnum; ?>">' +
 					'<td>' +
 					'<select class="form-control" name="backschool[' + FieldCount + '][status]" >' +
 					'<option value="0">点击选择</option>' +

@@ -78,29 +78,29 @@
 			                                              class="profile-img img-responsive center-block"/></a>
 
 			<div class="profile-label">
-                        <span class="label label-danger">
-                            <?php
-                            switch ($userinfo['role_id']) {
-	                            case 10:
-		                            echo "班委";
-		                            break;
-	                            case 20:
-		                            echo "学委";
-		                            break;
-	                            case 30:
-		                            echo "团支书";
-		                            break;
-	                            case 40:
-		                            echo "班长";
-		                            break;
-	                            case 50:
-		                            echo "管理员";
-		                            break;
-	                            default:
-		                            echo "会员";
-                            }
-                            ?>
-                        </span>
+        <span class="label label-danger">
+            <?php
+            switch ($userinfo['role_id']) {
+              case 10:
+                echo "班委";
+                break;
+              case 20:
+                echo "学委";
+                break;
+              case 30:
+                echo "团支书";
+                break;
+              case 40:
+                echo "班长";
+                break;
+              case 50:
+                echo "管理员";
+                break;
+              default:
+                echo "会员";
+            }
+            ?>
+        </span>
 			</div>
 			<!-- <div class="profile-stars">
 						<i class="fa fa-star"></i>
@@ -210,8 +210,8 @@
 				</li>
 				<!--<li class="active"><a href="#tab-newsfeed" data-toggle="tab">Newsfeed</a>
 				</li>
-				<li><a href="#tab-activity" data-toggle="tab">Activity</a></li>
-				<li><a href="#tab-friends" data-toggle="tab">Friends</a></li>-->
+<!--				<li><a href="#tab-activity" data-toggle="tab">Activity</a></li>-->
+				<li><a href="#tab-friends" data-toggle="tab">同学</a></li>
 				<li><a href="#tab-chat" data-toggle="tab">消息</a></li>
 			</ul>
 			<div class="tab-content">
@@ -283,7 +283,8 @@
 										2015年9月6日
 									</td>
 									<td class="text-center">
-										<span class="label label-danger">正在进行</span>
+										<span class="label label-success">已完成</span>
+<!--										<span class="label label-danger">正在进行</span>-->
 									</td>
 									<td class="text-center" style="width: 15%;">
 										<a href="<? echo base_url("task/backschool") ?>" class="table-link">
@@ -372,6 +373,61 @@
 						</div>
 
 					</div>
+				</div>
+				<div class="tab-pane clearfix" id="tab-friends">
+					<ul class="widget-users row">
+						<?
+						foreach($classmates as $row) {
+							?>
+							<li class="col-md-6">
+								<div class="img">
+									<img src="<? $head_img = "public/images/" . $row->head_img;
+									echo base_url("$head_img"); ?>" width="50px" alt="">
+								</div>
+								<div class="details">
+									<div class="name">
+										<a href="<?= base_url("user/sid/$row->student_id"); ?>"><?= $row->username; ?></a>
+									</div>
+									<div class="time">
+										<i class="fa fa-clock-o"></i>  <?
+										if($row->lastLoginTime){
+											echo "Last online:".$this->User_data->time_tran($row->lastLoginTime);
+										}else{
+											echo "还未登录";
+										}
+										 ?>
+									</div>
+									<div class="type">
+										<?php
+										switch ($row->role_id) {
+											case 10:
+												echo "班委";
+												break;
+											case 20:
+												echo "学委";
+												break;
+											case 30:
+												echo "团支书";
+												break;
+											case 40:
+												echo "<span class='label label-warning'>班长</span>";
+												break;
+											case 50:
+												echo "<span class='label label-danger'>管理员</span>";
+												break;
+											default:
+												break;
+										}
+										?>
+									</div>
+								</div>
+							</li>
+						<?
+						}
+						?>
+					</ul>
+					<br>
+					<a href="<?=base_url('user/all')?>" class="btn btn-success pull-right">View all users</a>
 				</div>
 			</div>
 		</div>

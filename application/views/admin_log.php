@@ -87,7 +87,6 @@
 								$config['base_url'] = base_url('admin/log');
 								$config['total_rows'] = $this->db->from('log')->get()->num_rows();
 								$config['per_page'] = 20;
-								$config['use_page_numbers'] = TRUE;
 								$config['full_tag_open'] = '<div class="main-box-body clearfix">
 																							<ul class="pagination">';
 								$config['full_tag_close'] = '</div>';

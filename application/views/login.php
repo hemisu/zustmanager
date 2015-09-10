@@ -63,16 +63,21 @@
 									<div id="remember-me-wrapper">
 										<div class="row">
 											<div class="col-xs-6">
-												<!--<div class="checkbox-nice">
+												<div class="checkbox-nice">
 														<input type="checkbox" id="remember-me" checked="checked"/>
 														<label for="remember-me">
 																记住我
 														</label>
-												</div>-->
+												</div>
 											</div>
 											<a href="#" id="login-forget-link" class="col-xs-6">
 												忘记密码
 											</a>
+										</div>
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="ds-login"></div>
+											</div>
 										</div>
 									</div>
 									<div class="row">

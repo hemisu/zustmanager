@@ -60,6 +60,7 @@
 						<div class="main-box clearfix">
 							<header class="main-box-header clearfix">
 								<h2>综合测评说明</h2>（<a href="<?=base_url('task/tlist')?>">总表</a>）
+								（<a href="<?=base_url("task/zc/sid/$loginUserid")?>">个人表</a>）
 							</header>
 							<div class="main-box-body clearfix">
 								<p> 本次综合测评细则下载地址：<br>
