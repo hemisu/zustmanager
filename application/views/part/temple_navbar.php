@@ -59,7 +59,38 @@
 								</li>
 							</ul>
 						</li>
-
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="fa fa-desktop"></i>
+								<span>待办事项</span>
+								<i class="fa fa-chevron-circle-right drop-icon"></i>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a href="<?=base_url('task/zc');?>" class="dropdown-toggle">
+										综合测评
+										<i class="fa fa-chevron-circle-right drop-icon"></i>
+									</a>
+									<ul class="submenu">
+										<li>
+											<a href="<?=base_url('task/zc/1');?>">
+												综测提交
+											</a>
+										</li>
+										<li>
+											<a href="<?=base_url('upload/up');?>">
+												凭证提交
+											</a>
+										</li>
+										<li>
+											<a href="<?=base_url("task/zc/sid/$loginUserid");?>">
+												个人表
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>

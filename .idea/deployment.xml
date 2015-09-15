@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="zust.hemisu.com">
+    <serverData>
+      <paths name="zust.hemisu.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/domains/hemisu.com/public_html/manager" local="$PROJECT_DIR$" web="/manager" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
+

@@ -24,6 +24,7 @@ class Welcome extends CI_Controller
 		echo base_url();
 		echo "<br>";
 		echo base_url('public/images/');
+		echo QINIUYUN;
 		$this->load->view('welcome_message');
 	}
 

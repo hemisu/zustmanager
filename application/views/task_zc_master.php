@@ -14,23 +14,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>综合测评 - 学生管理系统</title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/bootstrap/bootstrap.min.css"/>
 
-	<script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/demo-rtl.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/nanoscroller.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/theme_styles.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/magnific-popup.css">
 
-	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo QINIUYUN; ?>favicon.png" rel="shortcut icon"/>
 
 	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/html5shiv.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/respond.min.js"></script>
 	<![endif]-->
 
 
@@ -208,18 +208,18 @@
 
 <?php require_once('part/temple_config_tool.php');//右侧样式个性设置?>
 
-<script src="<?php echo base_url(); ?>js/demo-skin-changer.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url(); ?>js/demo.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo-skin-changer.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/bootstrap.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo.js"></script>
 
 
-<script src="<?php echo base_url(); ?>js/jquery.slimscroll.min.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.slimscroll.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.magnific-popup.min.js"></script>
 
-<script src="<?php echo base_url(); ?>js/scripts.js"></script>
-<script src="<?php echo base_url(); ?>js/pace.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/scripts.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/pace.min.js"></script>
 
 
 </body>

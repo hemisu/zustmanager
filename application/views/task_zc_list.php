@@ -14,23 +14,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>综合测评 - 学生管理系统</title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/bootstrap/bootstrap.min.css"/>
 
-	<script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/demo-rtl.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/nanoscroller.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/theme_styles.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/magnific-popup.css">
 
-	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo QINIUYUN; ?>favicon.png" rel="shortcut icon"/>
 
 	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/html5shiv.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/respond.min.js"></script>
 	<![endif]-->
 <style>
 	.table tbody>tr>td:first-child {
@@ -73,9 +73,9 @@
 								<h2>综合测评总表</h2>
 							</header>
 							<div class="main-box-body clearfix">
-								<table class="table table-condensed table-bordered table-responsive">
+								<table class="table table-bordered table-responsive">
 									<tr>
-										<td rowspan="3" width="60">班级</td>
+										<td rowspan="3" width="80">班级</td>
 										<td rowspan="3" width="80">学号</td>
 										<td rowspan="3" width="50">姓名</td>
 										<td colspan="22">德育测评(15%)</td>
@@ -84,6 +84,7 @@
 										<td colspan="4" rowspan="2">能力测评（15%）</td>
 										<td colspan="4" rowspan="2">个性发展测评（40分）</td>
 										<td rowspan="3" width="20">综合测评总分</td>
+										<td rowspan="3" width="40">状态</td>
 <!--										<td rowspan="3" width="20">综合测评排名</td>-->
 									</tr>
 									<tr>
@@ -200,7 +201,9 @@
 												$row->z5+
 												$row->z3+
 												$row->xjgr;//组织交流?></td>
-											<td><?if($nlsum=$zzxx+$sjcx+$zzjl+6>15){echo $nlsum=15;}else{echo $nlsum;};//能力测评小计?></td>
+											<td><?
+												$nlsum=($zzxx+$sjcx+$zzjl+6);
+												if($nlsum>15){echo $nlsum=15;}echo $nlsum;//能力测评小计?></td>
 											<td><?= $row->cxlsum;//创新类?></td>
 											<td><?= $row->cylsum;//才艺类?></td>
 											<td><?= '0'//其他类?></td>
@@ -212,6 +215,11 @@
 												$row->all*0.7+
 												$nlsum+
 												$row->cxlsum+$row->cylsum;//综合测评总分?></td>
+											<td><?if(!$row->status){
+													echo '<span class="label label-danger">审核</span>';
+												}else{
+													echo '<span class="label label-success">通过</span>';
+												}?></td>
 										</tr>
 									<?
 									}
@@ -231,18 +239,18 @@
 
 <?php require_once('part/temple_config_tool.php');//右侧样式个性设置?>
 
-<script src="<?php echo base_url(); ?>js/demo-skin-changer.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url(); ?>js/demo.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo-skin-changer.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/bootstrap.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo.js"></script>
 
 
-<script src="<?php echo base_url(); ?>js/jquery.slimscroll.min.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.slimscroll.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.magnific-popup.min.js"></script>
 
-<script src="<?php echo base_url(); ?>js/scripts.js"></script>
-<script src="<?php echo base_url(); ?>js/pace.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/scripts.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/pace.min.js"></script>
 
 
 </body>

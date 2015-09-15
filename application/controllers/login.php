@@ -29,7 +29,9 @@ class Login extends CI_Controller
 		if ($this->User_data->is_login()) {
 			redirect(base_url('user/profile'));
 		}
+
 		$cookie_login=$this->input->cookie('zust_login', TRUE);
+		if(empty($cookie_login)){$cookie_login = '&';}
 		$cookie_info= explode("&",$cookie_login);
 		if($this->User_data->user_exist($cookie_info[0], $cookie_info[1]) == TRUE){
 			$userinfo = $this->User_data->userinfo($cookie_info[0]);//读取用户数据
@@ -92,7 +94,7 @@ class Login extends CI_Controller
 			$this->input->set_cookie($cookie);
 			redirect(base_url('user/profile'));
 		}
-
+		$data = array();
 		//对提交的单表验证
 		$this->load->library('form_validation');//引入表单验证库
 		$this->form_validation->set_rules('user_id', '学号', 'required');
@@ -103,72 +105,14 @@ class Login extends CI_Controller
                                                       <strong>错误！</strong>', '</div>');
 		//表单验证
 		//初始化传递的值 防止报错
-		$data = array();
+
 		if ($this->form_validation->run() !== FALSE) {
 			$id = $this->input->post('user_id');//获取POST数据 学号
 			$password = $this->input->post('password');//密码
 
 			if ($this->User_data->user_exist($id, $password) == TRUE) //判断是否存在用户
 			{
-				$userinfo = $this->User_data->userinfo($id);//读取用户数据
-				//多说账号
-				$token = array(
-					"short_name" => 'zustmanager',
-					"user_key" => $userinfo['student_id'],
-					"name" => $userinfo['username'],
-				);
-				$duoshuoToken = JWT::encode($token, '97c1b8a2ce9f394b034232572c086196');
-				$cookie = array(
-					'name' => 'duoshuo_token',
-					'value' => $duoshuoToken,
-					'expire' => '86500',
-					'domain' => '',
-					'path' => '/',
-					'secure' => FALSE
-				);
-				$this->input->set_cookie($cookie);
-
-				$userinfo_session = array(
-					'username' => $userinfo['username'],
-					'student_id' => $userinfo['student_id'],
-					'head_img' => $userinfo['head_img'],
-					'major' => $userinfo['major'],
-					'classnum' => $userinfo['classnum'],
-					'email' => $userinfo['email'],
-					'qq' => $userinfo['qq'],
-				);
-				$this->session->set_userdata($userinfo_session); //将用户数据写入session
-
-				$logindate = array(
-					'status' => "1",
-					'lastLoginTime' => date("Y-m-d H:i:s")
-				);
-				$this->db->from('user')->where('student_id', $id)->update('user', $logindate);//更新用户登陆时间
-
-				$log = array(
-					'student_id' => $userinfo['student_id'],
-					'username' => $userinfo['username'],
-					'events' => '登陆',
-					'time' => date("Y-m-d H:i:s")
-				);
-				$this->db->insert('log', $log);//记录事件 登陆
-
-				/*      print_r($userinfo);//用户数据调出 调试用
-								echo "<hr>";
-								echo $this->session->userdata('username');
-								echo "<hr>";
-								echo "查询到此人";
-								echo date("Y-m-d H:i:s");*/
-				$cookie = array(
-					'name' => 'zust_login',
-					'value' => $userinfo['student_id'] . '&' . $userinfo['password'],
-					'expire' => '86500',
-					'domain' => '',
-					'path' => '/',
-					'secure' => FALSE
-				);
-				$this->input->set_cookie($cookie);
-				redirect(base_url('user/profile'));
+				$this->User_data->loginset($id);
 
 			} else {
 				$data['error'] = "账号或密码输入错误";
@@ -176,7 +120,16 @@ class Login extends CI_Controller
 		}
 		$this->load->view('login', $data);
 	}
+	public function login()
+	{
+		$id = $this->input->post('user_id');//获取POST数据 学号
+		$password = $this->input->post('password');//密码
 
+		if ($this->User_data->user_exist($id, $password) == TRUE) //判断是否存在用户
+		{
+			$this->User_data->loginset($id);
+		}
+	}
 	public function loginout()
 	{//退出登陆
 		$id = $this->session->userdata('student_id');
@@ -225,6 +178,7 @@ class Login extends CI_Controller
 //        header("refresh:2;url=$current_url");
 //
 //    }
+
 
 }
 

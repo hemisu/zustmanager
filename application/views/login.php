@@ -14,17 +14,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>登陆 - 学生管理系统</title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/bootstrap/bootstrap.min.css"/>
 
-	<script src="js/demo-rtl.js"></script>
+	<script src="<?php echo QINIUYUN; ?>"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/nanoscroller.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/theme_styles.css"/>
 
-	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo QINIUYUN; ?>favicon.png" rel="shortcut icon"/>
 	<!--[if lt IE 9]>
 	<script src="<?php echo base_url();?>js/html5shiv.js"></script>
 	<script src="<?php echo base_url();?>js/respond.min.js"></script>
@@ -41,11 +41,11 @@
 						<div class="col-xs-12">
 							<header id="login-header">
 								<div id="login-logo">
-									<img src="<?php echo base_url(); ?>img/logo.png" alt=""/>
+									<img src="<?php echo QINIUYUN; ?>img/logo.png" alt=""/>
 								</div>
 							</header>
 							<div id="login-box-inner">
-								<form role="form" method="post" action="<?php echo base_url('login'); ?>">
+								<form role="form" method="post" action="<?php echo base_url('login/login'); ?>">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fa fa-user"></i></span>
 										<input class="form-control" type="text" name="user_id" placeholder="学号">
@@ -126,14 +126,14 @@
 </div>
 <?php require_once('part/temple_config_tool.php');//右侧样式个性设置?>
 
-<script src="<?php echo base_url(); ?>js/demo-skin-changer.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url(); ?>js/demo.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo-skin-changer.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/bootstrap.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo.js"></script>
 
 
-<script src="<?php echo base_url(); ?>js/scripts.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/scripts.js"></script>
 
 </body>
 </html>

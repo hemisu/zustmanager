@@ -159,6 +159,7 @@ if (defined('ENVIRONMENT'))
  *  Now that we know the path, set the main path constants
  * -------------------------------------------------------------------
  */
+	define('QINIUYUN', 'http://7xliuv.com1.z0.glb.clouddn.com/manager/');
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 

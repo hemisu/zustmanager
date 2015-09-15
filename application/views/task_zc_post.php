@@ -14,24 +14,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>综合测评提交 - 学生管理系统</title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/bootstrap/bootstrap.min.css"/>
 
-	<script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/demo-rtl.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/nanoscroller.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/wizard.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/wizard.css">
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/magnific-popup.css">
 
-	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo QINIUYUN; ?>favicon.png" rel="shortcut icon"/>
 
 	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/html5shiv.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/respond.min.js"></script>
 	<![endif]-->
 
 	<style type="text/css">
@@ -261,6 +261,12 @@ if ($ifex=0) {//班长提交后变1
 			<textarea class="form-control" rows="3" name="deyu[dybeizhu]"><?echo $zcmasterinfo->dybeizhu;?></textarea>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<br/>
+			<a class="btn btn-success col-xs-12" onclick="$('.btn-next').click();">填写下一项</a>
+		</div>
+	</div>
 </div>
 <div class="step-pane" id="step2">
 	<div class="row">
@@ -298,7 +304,12 @@ if ($ifex=0) {//班长提交后变1
 				4.国家学生体育健康标准<br/><br/>
 			</p>
 		</div>
-
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<br/>
+			<a class="btn btn-success col-xs-12" onclick="$('.btn-next').click();">填写下一项</a>
+		</div>
 	</div>
 </div>
 <div class="step-pane" id="step3">
@@ -426,11 +437,11 @@ if ($ifex=0) {//班长提交后变1
 	</div>
 	<div class="form-group">
 		<label>参加开放性实验（每参加一项加0.1分）</label>
-		<input class="form-control" id="sports" type="text" name="nl[cjkfxsy]" value="<?echo $zcmasterinfo->cjkfxsy;?>" >
+		<input class="form-control" type="text" name="nl[cjkfxsy]" value="<?echo $zcmasterinfo->cjkfxsy;?>" >
 	</div>
 	<div class="form-group">
 		<label>尝试发明（以受理单为依据每项0.1分）</label>
-		<input class="form-control" id="sports" type="text" name="nl[csfm]" value="<?echo $zcmasterinfo->csfm;?>" >
+		<input class="form-control" type="text" name="nl[csfm]" value="<?echo $zcmasterinfo->csfm;?>" >
 	</div>
 	<div class="form-group">
 		<label>焊接技能比赛</label>
@@ -514,7 +525,8 @@ if ($ifex=0) {//班长提交后变1
 		<label>学院大型活动负责人  0.1分/次  1-2人（请在下方备注活动名称和负责人姓名）</label>
 		<input class="form-control" name="nl[fzr]" type="text" value="<?echo $zcmasterinfo->fzr;?>">
 	</div>
-	<p>评比中，5次90分以上的，寝室成员每人加0.5分，4次的，加0.4，逐次递减，被评为优秀寝室的，每人寝室成员再加0.5分</p>
+	<p>评比中，2次90分以上的，寝室成员每人加0.2分，1次的，加0.1
+		<br /><a href="http://www.hemisu.com/manager/public/weishengjiancha.zip">点击查看名单</a> </p>
 	<div class="form-group">
 		<label>文明寝室</label>
 		<input class="form-control" name="nl[wmqs]" type="text" value="<?echo $zcmasterinfo->wmqs;?>">
@@ -529,6 +541,12 @@ if ($ifex=0) {//班长提交后变1
 	<div class="form-group">
 		<label>备注栏(一行一条，格式：某某项目 +1分 请计算后填在上方相应处，此处仅供备注不统计分数)</label>
 		<textarea class="form-control" rows="3" name="nl[nlbeizhu]"><?echo $zcmasterinfo->nlbeizhu;?></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<br/>
+		<a class="btn btn-success col-xs-12" onclick="$('.btn-next').click();">填写下一项</a>
 	</div>
 </div>
 </div>
@@ -862,17 +880,17 @@ if ($ifex=0) {//班长提交后变1
 
 <?php require_once('part/temple_config_tool.php');//右侧样式个性设置?>
 
-<script src="<?php echo base_url(); ?>js/demo-skin-changer.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url(); ?>js/demo.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo-skin-changer.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/bootstrap.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo.js"></script>
 
-<script src="<?php echo base_url(); ?>js/wizard.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.maskedinput.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/wizard.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.maskedinput.min.js"></script>
 
-<script src="<?php echo base_url(); ?>js/scripts.js"></script>
-<script src="<?php echo base_url(); ?>js/pace.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/scripts.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/pace.min.js"></script>
 
 <script>
 	$(function () {

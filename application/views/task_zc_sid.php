@@ -14,23 +14,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>详细信息 - 综合测评 - 学生管理系统</title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/bootstrap/bootstrap.min.css"/>
 
-	<script src="<?php echo base_url(); ?>js/demo-rtl.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/demo-rtl.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/font-awesome.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/nanoscroller.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/nanoscroller.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/compiled/theme_styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/compiled/theme_styles.css"/>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/libs/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo QINIUYUN; ?>css/libs/magnific-popup.css">
 
-	<link type="image/x-icon" href="<?php echo base_url(); ?>favicon.png" rel="shortcut icon"/>
+	<link type="image/x-icon" href="<?php echo QINIUYUN; ?>favicon.png" rel="shortcut icon"/>
 
 	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/html5shiv.js"></script>
+	<script src="<?php echo QINIUYUN; ?>js/respond.min.js"></script>
 	<![endif]-->
 
 
@@ -58,7 +58,7 @@
 <div class="col-lg-12">
 <div class="main-box clearfix">
 <header class="main-box-header clearfix">
-	<h2><?=$zcidinfo[0]['username'];?> - 综测详细信息</h2>
+	<h2><?= $userinfo['username']; ?> - 综测详细信息</h2>
 </header>
 <div class="main-box-body clearfix">
 <div class="row cf nestable-lists">
@@ -69,13 +69,14 @@
 	<div class="dd-handle">
 		德育总分
 		<div class="nested-links">
-			<span class="badge"><?=$dysum=($zcidinfo[0]['ztyxf']*0.7+array_sum(array_slice($zcidinfo[0], 5,-41)))*0.15; ?></span>
+			<span
+				class="badge"><?= $dysum = ($zcidinfo[0]['ztyxf'] * 0.7 + array_sum(array_slice($zcidinfo[0], 5, -42))) * 0.15; ?></span>
 		</div>
 	</div>
 </li>
 <ol class="dd-list">
 	<?
-	$dy = array_slice($zcidinfo[0], 4,-40);
+	$dy = array_slice($zcidinfo[0], 4, -41);
 	foreach ($dy as $key => $val) {
 		switch ($key) {
 			case "ztyxf"    :
@@ -161,7 +162,9 @@
 				break;
 			case "dybeizhu"   :
 				$key = '德育项目备注';
-				if(empty($val)){break;}
+				if (empty($val)) {
+					break;
+				}
 				$val = explode("\n", $val);
 				break;
 			default:
@@ -176,8 +179,8 @@
 				<? echo $key; ?>
 				<div class="nested-links">
         <span class="badge"><?if (!is_array($val)) {
-	          echo $val;
-          }?></span>
+		        echo $val;
+	        }?></span>
 				</div>
 			</div>
 		</li>
@@ -199,7 +202,7 @@
 	?>
 </ol>
 <?
-$xy = array_slice($zcidinfo[0], 32,-36);
+$xy = array_slice($zcidinfo[0], 32, -36);
 ?>
 <li class="dd-item dd-item-list">
 	<div class="dd-handle-list"><i class="fa fa-bars"></i></div>
@@ -207,7 +210,7 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 		学业总分
 		<div class="nested-links">
       <span class="badge"><?
-	      echo $xysum=$zcidinfo[0]['all']*0.7;
+	      echo $xysum = $zcidinfo[0]['all'] * 0.7;
 	      ?>
       </span>
 		</div>
@@ -240,10 +243,9 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 		?>
 		<li class="dd-item">
 			<div class="dd-handle">
-				<?echo $key; ?>
+				<? echo $key; ?>
 				<div class="nested-links">
 					<span class="badge"><? echo $val; ?></span>
-
 				</div>
 			</div>
 		</li>
@@ -258,31 +260,31 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 		<div class="nested-links">
 			<span class="badge"><?
 				$gxsum = 0;//个性总分初始化
-				foreach($zcidinfogx as $val){
-					switch($val->lb){
+				foreach ($zcidinfogx as $val) {
+					switch ($val->lb) {
 						case "a":
-							$l=1;
+							$l = 1;
 							break;
 						case "b":
-							$l=0.7;
+							$l = 0.7;
 							break;
 						case "c":
-							$l=0.5;
+							$l = 0.5;
 							break;
 						case "cxlqt":
-							$l=1;
+							$l = 1;
 							break;
 						case "cy":
-							$l=1;
+							$l = 1;
 							break;
 						case "ty":
-							$l=1;
+							$l = 1;
 							break;
 						case "gxyb":
-							$l=1;
+							$l = 1;
 							break;
 						case "gxydh":
-							$l=1;
+							$l = 1;
 							break;
 					}
 					$gxsum += $val->sorce * $l;
@@ -297,11 +299,11 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 	</div>
 </li>
 <ol class="dd-list">
-	<?foreach($zcidinfogx as $val){?>
+	<? foreach ($zcidinfogx as $val) { ?>
 		<li class="dd-item">
 			<div class="dd-handle">
-				<?=$val->xmname;?>(<?
-				switch($val->lb) {
+				<?= $val->xmname; ?>(<?
+				switch ($val->lb) {
 					case 'a'    :
 						echo '创新创业A类';
 						break;
@@ -332,38 +334,38 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 				<div class="nested-links">
       <span
 	      class="badge"><?
-	      switch($val->lb){
+	      switch ($val->lb) {
 		      case "a":
-			      $l=1;
+			      $l = 1;
 			      break;
 		      case "b":
-			      $l=0.7;
+			      $l = 0.7;
 			      break;
 		      case "c":
-			      $l=0.5;
+			      $l = 0.5;
 			      break;
 		      case "cxlqt":
-			      $l=1;
+			      $l = 1;
 			      break;
 		      case "cy":
-			      $l=1;
+			      $l = 1;
 			      break;
 		      case "ty":
-			      $l=1;
+			      $l = 1;
 			      break;
 		      case "gxyb":
-			      $l=1;
+			      $l = 1;
 			      break;
 		      case "gxydh":
-			      $l=1;
+			      $l = 1;
 			      break;
 	      }
-	      echo $s=$val->sorce."\t*\t".$l;
-	      echo "\t=".$s*$l;?></span>
+	      echo $s = $val->sorce . "\t*\t" . $l;
+	      echo "\t=" . $s * $l;?></span>
 				</div>
 			</div>
 		</li>
-	<?}?>
+	<? } ?>
 </ol>
 </ol>
 </div>
@@ -375,8 +377,8 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 				能力总分
 				<div class="nested-links">
           <span class="badge"><?
-	          $nl=array_slice($zcidinfo[0], 37,-2);
-	          $nlsum = array_sum(array_slice($zcidinfo[0], 37,-3))+6;//基础能力分+6
+	          $nl = array_slice($zcidinfo[0], 37, -3);
+	          $nlsum = array_sum(array_slice($zcidinfo[0], 37, -4)) + 6;//基础能力分+6
 	          if ($nlsum > 15) {
 		          echo $nlsum = 15;;
 	          } else {
@@ -498,7 +500,9 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 						break;
 					case "nlbeizhu"   :
 						$key = '能力项目备注';
-						if(empty($val)){break;}
+						if (empty($val)) {
+							break;
+						}
 						$val = explode("\n", $val);
 						break;
 					default:
@@ -549,12 +553,43 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 </div>
 
 </div>
+<div class="row">
+	<div class="col-md-12">
+		<h3>凭证</h3>
+		<table class="table table-condensed table-hover">
+			<tr>
+				<td>文件名</td>
+				<td>浏览(点击浏览大图)</td>
+				<?php if(!$this->User_data->user_role($loginUserid, 40)){?>
+					<td>操作</td>
+				<?}?>
+			</tr>
+			<?
+			$filelist=$this->db->from('upload')->where('student_id',$userinfo['student_id'])->get()->result();
+			foreach($filelist as $row){
+				?>
+				<tr>
+					<td><?=$row->fname;?></td>
+					<td><a href="http://7xliuv.com1.z0.glb.clouddn.com/<?=$row->fkey;?>"> <img src="http://7xliuv.com1.z0.glb.clouddn.com/<?=$row->fkey;?>?imageView2/1/w/80/interlace/1"> </a></td>
+					<?php if(!$this->User_data->user_role($loginUserid, 40)){?>
+					<td><a href="<?=base_url("upload/delkey/$row->fkey");?>">删除</a> </td>
+					<?}?>
+				</tr>
+			<?
+			}
+			?>
+		</table>
+	</div>
+</div>
 </div>
 </div>
 </div>
 	<div class="col-lg-12">
 		<div class="main-box clearfix">
 			<div class="main-box-body clearfix">
+				<h3>如果有疑问，可以在下方吐槽，或者发信息给我<a href="<?=base_url('user/sid/1130320108')?>">点击发信息</a><br />
+					QQ:597941116 短号:679984 Name:He
+				</h3>
 			<!-- 多说评论框 start -->
 			<div class="ds-thread" data-thread-key="<?=$zcidinfo[0]['student_id'];?>" data-title="<?=$zcidinfo[0]['username'];?>的综测信息" data-url="<?=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>"></div>
 			<!-- 多说评论框 end -->
@@ -572,19 +607,19 @@ $xy = array_slice($zcidinfo[0], 32,-36);
 
 <?php require_once('part/temple_config_tool.php');//右侧样式个性设置?>
 
-<script src="<?php echo base_url(); ?>js/demo-skin-changer.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url(); ?>js/demo.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo-skin-changer.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/bootstrap.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/demo.js"></script>
 
 
-<script src="<?php echo base_url(); ?>js/jquery.slimscroll.min.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.slimscroll.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/jquery.magnific-popup.min.js"></script>
 
 
-<script src="<?php echo base_url(); ?>js/scripts.js"></script>
-<script src="<?php echo base_url(); ?>js/pace.min.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/scripts.js"></script>
+<script src="<?php echo QINIUYUN; ?>js/pace.min.js"></script>
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
 	var duoshuoQuery = {

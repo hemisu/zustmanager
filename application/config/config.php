@@ -19,6 +19,7 @@
 $config['base_url'] = 'http://localhost/zustmanager';
 //http://localhost/manager
 //http://hemisu.oicp.net/manager
+$config['jscss_url'] = 'http://www.baidu.com';
 /*
 |--------------------------------------------------------------------------
 | Index File

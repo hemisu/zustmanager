@@ -72,8 +72,8 @@ $loginUserInfo = $this->User_data->userinfo($loginUserid);//登陆者信息
 							<li class="item">
 								<a href="<?php echo base_url('task/backschool'); ?>">
 									<i class="fa fa-comment"></i>
-									<span class="content">2015秋季返校统计</span>
-									<span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
+									<span class="content">13级综合测评</span>
+									<span class="time"><i class="fa fa-clock-o"></i><?=$this->User_data->time_tran("2015-09-14 20:30:00");?></span>
 								</a>
 							</li>
 <!--							<li class="item">-->

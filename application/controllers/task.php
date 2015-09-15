@@ -74,6 +74,7 @@ class Task extends CI_Controller
 				$zcid = $this->uri->segment(4, 0);
 				$zcidinfo = $data['zcidinfo'] = $this->db->from('zc')->where('student_id',$zcid)->get()->result_array();
 				$data['zcidinfogx'] = $this->db->from('zc_gx')->where('student_id',$zcid)->get()->result();
+				$data['userinfo'] = $this->User_data->userinfo($zcid);
 				$this->load->view('task_zc_sid', $data);
 //				print_r($zcidinfo[0]);
 //				echo "<pre>";
@@ -142,7 +143,7 @@ class Task extends CI_Controller
 //		where('major', $major)->where('classnum', $classnum)->
 		$data['userinfo'] = $this->User_data->userinfo($id);
 
-		$data['zclist'] = $this->db->select('*')->from('zc')->get()->result();
+		$data['zclist'] = $this->db->select('*')->from('zc')->order_by('major asc, classnum asc')->get()->result();
 
 		$this->load->view('task_zc_list', $data);
 
@@ -402,6 +403,8 @@ class Task extends CI_Controller
 			'time' => date("Y-m-d H:i:s")
 		);
 		$this->db->insert('log', $log);//记录事件 登出
+		redirect('task/master', 'refresh');
+
 //		$current_url = $this->input->post('current_url');
 //		echo "<br /><a href='" . $current_url . "'>返回</a>";
 	}
